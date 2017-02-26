@@ -1,0 +1,25 @@
+{
+	"ROOT":{
+	
+		"MSG":"",
+		"OBJ_COLLECTION_TITLE":"",
+		"OBJ_COLLECTION":[
+			{
+				"MATERIAL":"201",
+				"MATL_DESC":"Materie Prima 1"
+			},
+			{
+				"MATERIAL":"202",
+				"MATL_DESC":"Materie Prima 2"
+			},
+						{
+				"MATERIAL":"203",
+				"MATL_DESC":"Materie Prima 3"
+			},
+			{
+				"MATERIAL":"204",
+				"MATL_DESC":"Materie Prima 4"
+			}		
+		]
+	}
+}

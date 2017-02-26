@@ -1,0 +1,179 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
+	xmlns:t="sap.ui.table" xmlns:core="sap.ui.core" controllerName="sap.ui.pp.mobi.controller.OrderDetail" displayBlock="true">
+	<Page id="pageOrderDetail" showNavButton="true" navButtonPress="onNavBack" title="Confirmare Comanda">
+		<ObjectHeader title="{HEADER/SHORT_TEXT}" number="{HEADER/PLANNEDORDER_NUM}" responsive="true" fullScreenOptimized="true">
+			<attributes>
+				<ObjectAttribute title="Linia de productie" text="{HEADER/PRODUCTION_LINE}"/>
+				<ObjectAttribute title="Produs {ProductionLineCollection>/ROOT/LINES/SET_PROD_LOT}" text="{HEADER/MATERIAL}"/>
+				<ObjectAttribute title="Cantitate planificata" text="{HEADER/TOTAL_PLORD_QTY} {path:'HEADER/BASE_UOM', formatter: '.formatter.uom'}"/>
+			</attributes>
+		</ObjectHeader>
+		<!--
+		<Panel class="sapUiResponsiveMargin" width="auto" headerText="Confirmare">
+		
+			<content>
+				<Label text="Cantitate Produsa"/>
+				<Input type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
+			</content>
+			
+		</Panel>
+		-->
+		<VBox>
+			<f:Form id="FormChange354" minWidth="1024" maxContainerCols="2" editable="true">
+				<!--
+				<f:title>
+					<core:Title text="Confirmare"/>
+				</f:title>
+				-->
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Punct de raportare">
+								<ComboBox showSecondaryValues="true" items="{ path: 'REPPOINTS', sorter: { path: 'REPPOINT' } }" value="{HEADER/REPPOINT}"
+									change="onChangeRepPoint">
+									<core:ListItem key="{REPPOINT}" text="{REPPOINT} {TEXT}" additionalText="{QUANTITY} {path:'UOM' , formatter: '.formatter.uom'}"/>
+								</ComboBox>
+							</f:FormElement>
+							<f:FormElement label="Data inregistrare">
+								<f:fields>
+									<DatePicker value="{HEADER/POSTDATE}" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChangeDate"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement id="labelYeld" label="Cantitate {orderdetail>/txtYeldOrScrap}">
+								<f:fields>
+									<Input class="sapInputRight" type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
+									<!--
+									<Input type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True"
+										value="{ path: 'HEADER/YELD', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 5 }} "/>
+									-->
+									<!--
+									<Switch state="{orderdetail>/IsYeld}" type="AcceptReject" change="handleChangeSwitch">
+										<layoutData>
+											<FlexItemData growFactor="1"/>
+										</layoutData>
+									</Switch>
+									
+									<Text text="Lot"/>
+									<Input value="{HEADER/BATCH}"/>
+									-->
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Lot" visible="{orderdetail>/SetLot}">
+								<f:fields>
+									<Input name="Input_lot" value="{HEADER/BATCH}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Modul Formare" visible="{orderdetail>/SetModForm}">
+								<f:fields>
+									<Input name="Input_mod_formare" value="{HEADER/MOD_FORM}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Observatie">
+								<f:fields>
+									<Input value="{HEADER/ZZOBS}"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</VBox>
+		<Panel width="auto" expandable="false" expanded="true">
+			<content>
+				<Table inset="false" id="componentsList" items="{ path: 'COMPONENTS', sorter: { path: 'MATL_DESC' } }" busyIndicatorDelay="0">
+					<!--
+					<headerToolbar>
+						<Toolbar>
+							<Input id="dummy" value="{dummy}" type="hidden" enabled="false"/>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://add" id="btnAddItem" press="handleAddItem" text="Pozitie noua"/>
+						</Toolbar>
+					</headerToolbar>
+					-->
+					<columns>
+						<Column>
+							<Text text="Material"/>
+						</Column>
+						<Column width="15%" minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Cod Material"/>
+						</Column>
+						<!--
+						<Column hAlign="Right">
+							<Text text="Cantitate Planificata" />
+						</Column>
+						-->
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Lot"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text class="sapInputRight" text="Cantitate Utilizata"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier title="{MATL_DESC} " text="{REQ_QUAN} {path:'BASE_UOM', formatter: '.formatter.uom'}"/>
+								<Input editable="{/MaterialIsEditable}" id="productInputMaterial" value="{MATERIAL}"/>
+								<!--
+								<ObjectNumber number="{REQ_QUAN}" unit="{BASE_UOM}" />
+								-->
+								<Input id="productInputLot" value="{BATCH}" enabled="true" editable="true" filterSuggests="false" showValueHelp="true"
+									maxSuggestionWidth="50%" valueHelpRequest="handleValueRequestCharg"/>
+								<HBox>
+									<Input value="{CONF_QUAN}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number" class="sapInputRight"/>
+									<Button enabled="{split}" icon="sap-icon://duplicate" id="btnSplitItem" press="handleSplitItem"/>
+									<!--	<Button icon="sap-icon://add-product" id="btnReplaceItem" press="handleReplaceItem"/> -->
+								</HBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</content>
+		</Panel>
+		<Panel width="auto" expandable="false" expanded="true">
+			<content>
+				<Table inset="false" id="charsList" items="{ path: 'CHARS'}" busyIndicatorDelay="0">
+					<columns>
+						<Column>
+							<Text text="Caracteristica"/>
+						</Column>
+						<Column>
+							<Text text="Valoare"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier title="{ATBEZ}"/>
+								<FlexBox>
+								<Input fieldGroupIds="Value" value="{VALUE}" enabled="true" editable="true" filterSuggests="false" showValueHelp="true"
+										type="{path:'ATFOR', formatter: '.formatter.type_input'}"  visible="{= ${ATFOR} !== 'DATE' }"
+											maxSuggestionWidth="50%" valueHelpRequest="handleValueRequestCharVal"/>
+								<DatePicker fieldGroupIds="Value" value="{VALUE}" valueFormat="yyyy-MM-dd" displayFormat="long" visible="{= ${ATFOR} === 'DATE' }" />  
+								</FlexBox>
+							</cells>
+						</ColumnListItem>
+					</items>			
+				</Table>
+			</content>						
+		</Panel>			
+		
+		<footer>
+			<Bar>
+				<contentLeft>
+					<Button id="buttonScann" icon="sap-icon://bar-code" text="Mod Scanare"/>
+					<ToggleButton icon="sap-icon://broken-link" enabled="true" pressed="false" press="onPressEditMaterial" visible="false"/>
+				</contentLeft>
+				<contentRight>
+					<Button id="buttonSave" icon="sap-icon://save" press="onPressSave" type="Accept" text="Salvare confirmare"/>
+					<!--
+					<Button id="buttonMessages" icon="sap-icon://alert" press="messagePopoverOpen" visible="{StateEnd}" text="{controls>/buttonMessagesText}" type="{controls>/buttonMessagesType}"/>
+					-->
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

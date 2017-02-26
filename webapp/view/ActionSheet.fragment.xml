@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <ActionSheet
+    title="Alegeti optiunea dorita"
+    showCancelButton="true"
+    placement="Vertical">
+    <buttons>
+     <!--
+      <Button text="Refresh" icon="sap-icon://refresh" press="handleRefresh" visible="{config>/btnLogout}"/>
+      
+      <Button text="Incarcare date locale" icon="sap-icon://forward" press="handleLocalData" />
+      -->
+      
+      <Button text="Incarcare date de Test" icon="sap-icon://forward" press="handleLocalDataTest" visible="{config>/testMode}" />
+      
+      <Button text="Autentificare" icon="sap-icon://employee" press="handleAuthentification" visible="{config>/btnAuthen}"/>
+      <Button text="Configurare" icon="sap-icon://settings" press="handlePressConfiguration" visible="{config>/btnAuthen}"/>
+      <Button text="Logout [{currentUser>/user}]" icon="sap-icon://log" type="Reject" press="handleLogout" visible="{config>/btnLogout}"/>
+    </buttons>
+  </ActionSheet>
+</core:FragmentDefinition>

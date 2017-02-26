@@ -1,0 +1,13 @@
+in prim faza se vor aduce doar comenzile planificate de la capacitatea 1
+
+stocul de produse se determina in functie de componentele din comanda planificata
+
+- totate posturile de categorie 10 sunt linii de productie
+
+
+- se aduc doar comenzile Programate
+- de completat caracteristicile specifice clasei produsului - se cor aduce in plicatia mobila doar caracteristicile ce au UI5 in campul origine
+
+- de adaugat un text in atetul comenzii
+
+- da facut sincronizarea individuala / colectiva

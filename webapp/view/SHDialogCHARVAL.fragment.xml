@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Valori caracteristica"
+		class="sapUiPopupWithPadding"
+		items="{CharValCollection>/ROOT/OBJ_COLLECTION}"
+		search="_handleValueHelpSearch"
+		confirm="_handleValueHelpClose"
+		cancel="_handleValueHelpClose">
+		<StandardListItem
+			title="{CharValCollection>MATERIAL}"
+			description="{CharValCollection>MATL_DESC}" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "pp_mobi",
+        "description": "Confirmare productie",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/webapp",
+        "appUrl": "#pp_mobi-Display",
+        "navigationComponentName": "sap.ui.pp.mobi",
+        "intentSemanticObject": "pp_mobi",
+        "intentAction": "Display",
+        "html5ApplicationName": "ppmobi",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "00000000-0000-1111-0000-00000000"
+        ],
+        "contentPackages": [
+            "00000000-0000-2222-0000-00000000"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Confirmare Productie",
+        "subtitle": "repetitiva",
+        "searchKeywords": "Confirmare Productie,repetitiva",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

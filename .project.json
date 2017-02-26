@@ -1,0 +1,28 @@
+{
+  "hcpdeploy": {
+    "account": "s0004210280trial",
+    "name": "ppmobi",
+    "lastVersionWeTriedToDeploy": "1.0.1"
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "ro",
+    "defaultLanguage": "ro",
+    "defaultI18NPropertyFile": "",
+    "resourceModelName": ""
+  },
+  "performancetoolkit.runner": {
+    "e2eDuration": {
+      "error": 3750,
+      "warning": 2750
+    },
+    "roundTrips": {
+      "error": 4,
+      "warning": 2
+    },
+    "backendRequests": {
+      "error": 4,
+      "warning": 2
+    }
+  }
+}

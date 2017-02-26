@@ -1,0 +1,105 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "sap.ui.pp.mobi",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"ach": "CA-UI5-DOC"
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_belize "],
+		"icons": {
+			"icon": "sap-icon://activities",
+			"phone": "sap-icon://activities",
+			"phone@2": "sap-icon://activities",
+			"tablet": "sap-icon://activities",
+			"tablet@2": "sap-icon://activities",
+			"favIcon": ""
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": "sap.ui.pp.mobi.view.App",
+		"dependencies": {
+			"minUI5Version": "1.40",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"config": {
+			"orderLocal": "/AllData.json"
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.pp.mobi.view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "orderlist",
+				"target": "orderlist"
+			}, {
+				"pattern": "orderdetail/{id}",
+				"name": "orderdetail",
+				"target": "orderdetail"
+			}],
+			"targets": {
+				"orderlist": {
+					"viewName": "OrderList",
+					"viewId": "orderList",
+					"viewLevel": 1
+				},
+				"orderdetail": {
+					"viewName": "OrderDetail",
+					"viewId": "orderdetail",
+					"viewLevel": 2
+				},
+				"orderNotFound": {
+					"viewName": "orderNotFound",
+					"viewId": "orderNotFound"
+				},
+				"notFound": {
+					"viewName": "NotFound",
+					"viewId": "notFound"
+				}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.ui.pp.mobi.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

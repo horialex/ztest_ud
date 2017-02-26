@@ -1,0 +1,57 @@
+{
+	"ROOT": {
+		"MSG": "GET efectuat cu succes !",
+		"RETURN": {
+			"TYPE": "",
+			"ID": "",
+			"NUMBER": "000",
+			"MESSAGE": "",
+			"LOG_NO": "",
+			"LOG_MSG_NO": "000000",
+			"MESSAGE_V1": "",
+			"MESSAGE_V2": "",
+			"MESSAGE_V3": "",
+			"MESSAGE_V4": ""
+		},
+		"LINES": [{
+			"WERKS": "2010",
+			"ARBPL": "LM_11",
+			"SHORT_TEXT": "Ierarhie linie montaj 1 cap.1",
+			"BARCODE": "LM_11",
+			"SET_PROD_LOT": "",
+			"SET_MOD_FORM":"X"
+		}, {
+			"WERKS": "2010",
+			"ARBPL": "LM_12",
+			"SHORT_TEXT": "Ierarhie linie montaj2 cap.1",
+			"BARCODE": "LM_12",
+			"SET_PROD_LOT": "",
+			"SET_MOD_FORM":"X"
+		}, {
+			"WERKS": "2010",
+			"ARBPL": "LM_13",
+			"SHORT_TEXT": "Ierarhie linie montaj3 cap.1",
+			"BARCODE": "LM_13",
+			"SET_PROD_LOT": "X",
+			"SET_MOD_FORM": ""
+		}, {
+			"WERKS": "2010",
+			"ARBPL": "LM_14",
+			"SHORT_TEXT": "Ierarhie linie montaj4 cap.1",
+			"BARCODE": "LM_14",
+			"SET_PROD_LOT": ""
+		}, {
+			"WERKS": "2010",
+			"ARBPL": "LM_15",
+			"SHORT_TEXT": "Ierarhie linie montaj 1 cap.1",
+			"BARCODE": "LM_15",
+			"SET_PROD_LOT": ""
+		}, {
+			"WERKS": "2010",
+			"ARBPL": "LM_17",
+			"SHORT_TEXT": "Ierarhie linie montaj 17 cap.1",
+			"BARCODE": "LM_17",
+			"SET_PROD_LOT": ""
+		}]
+	}
+}
