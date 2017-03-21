@@ -11,3 +11,71 @@ stocul de produse se determina in functie de componentele din comanda planificat
 - de adaugat un text in atetul comenzii
 
 - da facut sincronizarea individuala / colectiva
+
+-defacut transfer de UD
+
+
+		<VBox>
+			<f:Form id="FormChange354" minWidth="1024" maxContainerCols="2" editable="true">
+
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Punct de raportare">
+								<ComboBox showSecondaryValues="true" items="{ path: 'REPPOINTS', sorter: { path: 'REPPOINT' } }" value="{HEADER/REPPOINT}"
+									change="onChangeRepPoint">
+									<core:ListItem key="{REPPOINT}" text="{REPPOINT} {TEXT}" additionalText="{QUANTITY} {path:'UOM' , formatter: '.formatter.uom'}"/>
+								</ComboBox>
+							</f:FormElement>
+							<f:FormElement label="Data inregistrare">
+								<f:fields>
+									<DatePicker value="{HEADER/POSTDATE}" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChangeDate"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement id="labelYeld" label="Cantitate {orderdetail>/txtYeldOrScrap}">
+								<f:fields>
+									<Input class="sapInputRight" type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
+									<!--
+									<Input type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True"
+										value="{ path: 'HEADER/YELD', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 5 }} "/>
+									-->
+									<!--
+									<Switch state="{orderdetail>/IsYeld}" type="AcceptReject" change="handleChangeSwitch">
+										<layoutData>
+											<FlexItemData growFactor="1"/>
+										</layoutData>
+									</Switch>
+									
+									<Text text="Lot"/>
+									<Input value="{HEADER/BATCH}"/>
+									-->
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Lot" visible="{orderdetail>/SetLot}">
+								<f:fields>
+									<Input name="Input_lot" value="{HEADER/BATCH}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Modul Formare" visible="{orderdetail>/SetModForm}">
+								<f:fields>
+									<Input name="Input_mod_formare" value="{HEADER/MOD_FORM}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Unitate depozitare"  >
+								<f:fields>
+									<Input name="Input_ud" value="{HEADER/NLENR}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Observatie">
+								<f:fields>
+									<Input value="{HEADER/ZZOBS}"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</VBox>

@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
 	
 	<SelectDialog
-		title="Materiale disponibile"
+		title="Loturi disponibile"
 		class="sapUiPopupWithPadding"
 		items="{StockCollection>/ROOT/STOCK}"
 		search="_handleValueHelpSearchCharg"
@@ -13,39 +13,6 @@
 			info="{StockCollection>QTY}"
 			/>
 	</SelectDialog>
- <!--
-	<TableSelectDialog
-		noDataText="Nu au fost gasite loturi"
-		title="Select Product"
-		search="_handleValueHelpSearch"
-		confirm="_handleValueHelpClose"
-		cancel="_handleValueHelpClose"
-		items="{ChargsCollection>/ROOT/OBJ_COLLECTION}">
-		<columns>
-			<Column>
-				<header>
-					<Text text="Lot" />
-				</header>
-			</Column>
-			<Column>
-				<header>
-					<Text text="Cantitate" />
-				</header>
-			</Column>
-			
-		</columns>
-		<ColumnListItem>
-			<cells>
-				<ObjectIdentifier
-					title="{ChargsCollection>CHARG}"
-					text="{ChargsCollection>MATL_DESC}" />
-				 
-				<ObjectNumber number="{ChargsCollection>QTY}"  />
-				 
-			</cells>
-		</ColumnListItem>
 
-	</TableSelectDialog>
-	-->
  
 </core:FragmentDefinition>

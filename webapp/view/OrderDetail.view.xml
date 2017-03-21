@@ -18,69 +18,34 @@
 			
 		</Panel>
 		-->
-		<VBox>
-			<f:Form id="FormChange354" minWidth="1024" maxContainerCols="2" editable="true">
-				<!--
-				<f:title>
-					<core:Title text="Confirmare"/>
-				</f:title>
-				-->
-				<f:layout>
-					<f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1"/>
-				</f:layout>
-				<f:formContainers>
-					<f:FormContainer>
-						<f:formElements>
-							<f:FormElement label="Punct de raportare">
-								<ComboBox showSecondaryValues="true" items="{ path: 'REPPOINTS', sorter: { path: 'REPPOINT' } }" value="{HEADER/REPPOINT}"
+       <f:SimpleForm id="FieldGroupView" minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+			     labelSpanL="4" labelSpanM="4"
+				emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2" >
+				<f:content>
+				 
+					<core:Title text="Confirmare" />
+					<Label text="Punct de raportare"/>
+					<ComboBox fieldGroupIds="1" showSecondaryValues="true" items="{ path: 'REPPOINTS', sorter: { path: 'REPPOINT' } }" value="{HEADER/REPPOINT}"
 									change="onChangeRepPoint">
 									<core:ListItem key="{REPPOINT}" text="{REPPOINT} {TEXT}" additionalText="{QUANTITY} {path:'UOM' , formatter: '.formatter.uom'}"/>
-								</ComboBox>
-							</f:FormElement>
-							<f:FormElement label="Data inregistrare">
-								<f:fields>
-									<DatePicker value="{HEADER/POSTDATE}" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChangeDate"/>
-								</f:fields>
-							</f:FormElement>
-							<f:FormElement id="labelYeld" label="Cantitate {orderdetail>/txtYeldOrScrap}">
-								<f:fields>
-									<Input class="sapInputRight" type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
-									<!--
-									<Input type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True"
-										value="{ path: 'HEADER/YELD', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 5 }} "/>
-									-->
-									<!--
-									<Switch state="{orderdetail>/IsYeld}" type="AcceptReject" change="handleChangeSwitch">
-										<layoutData>
-											<FlexItemData growFactor="1"/>
-										</layoutData>
-									</Switch>
-									
-									<Text text="Lot"/>
-									<Input value="{HEADER/BATCH}"/>
-									-->
-								</f:fields>
-							</f:FormElement>
-							<f:FormElement label="Lot" visible="{orderdetail>/SetLot}">
-								<f:fields>
-									<Input name="Input_lot" value="{HEADER/BATCH}"/>
-								</f:fields>
-							</f:FormElement>
-							<f:FormElement label="Modul Formare" visible="{orderdetail>/SetModForm}">
-								<f:fields>
-									<Input name="Input_mod_formare" value="{HEADER/MOD_FORM}"/>
-								</f:fields>
-							</f:FormElement>
-							<f:FormElement label="Observatie">
-								<f:fields>
-									<Input value="{HEADER/ZZOBS}"/>
-								</f:fields>
-							</f:FormElement>
-						</f:formElements>
-					</f:FormContainer>
-				</f:formContainers>
-			</f:Form>
-		</VBox>
+					</ComboBox>
+					<Label text="Data inregistrare"/>
+					<DatePicker value="{HEADER/POSTDATE}" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChangeDate"/>
+					<Label id="labelYeld" text="Cantitate {orderdetail>/txtYeldOrScrap}"/>
+					<Input fieldGroupIds="1" class="sapInputRight" type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
+					<core:Title text="Depozitare" />
+					<Label text="Lot" visible="{orderdetail>/SetLot}"/>
+					<Input fieldGroupIds="2" name="Input_lot" value="{HEADER/BATCH}" visible="{orderdetail>/SetLot}"/>
+					<Label text="Modul formare" visible="{orderdetail>/SetModForm}"/>
+					<Input fieldGroupIds="2" name="Input_mod_formare" value="{HEADER/MOD_FORM}" visible="{orderdetail>/SetModForm}"/>
+					<Label text="Unitate depozitare"/>
+					<Input fieldGroupIds="2" name="Input_ud" value="{HEADER/NLENR}"/>
+					
+					<Label fieldGroupIds="3" text="Observatie"/>
+					<Input fieldGroupIds="3" value="{HEADER/ZZOBS}"/>
+				</f:content>
+			</f:SimpleForm>
 		<Panel width="auto" expandable="false" expanded="true">
 			<content>
 				<Table inset="false" id="componentsList" items="{ path: 'COMPONENTS', sorter: { path: 'MATL_DESC' } }" busyIndicatorDelay="0">
@@ -124,7 +89,7 @@
 									maxSuggestionWidth="50%" valueHelpRequest="handleValueRequestCharg"/>
 								<HBox>
 									<Input value="{CONF_QUAN}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number" class="sapInputRight"/>
-									<Button enabled="{split}" icon="sap-icon://duplicate" id="btnSplitItem" press="handleSplitItem"/>
+									<Button enabled="{split}" icon="sap-icon://duplicate" id="btnSplitItem" press="onPressSplitItem"/>
 									<!--	<Button icon="sap-icon://add-product" id="btnReplaceItem" press="handleReplaceItem"/> -->
 								</HBox>
 							</cells>
@@ -149,7 +114,7 @@
 							<cells>
 								<ObjectIdentifier title="{ATBEZ}"/>
 								<FlexBox>
-								<Input fieldGroupIds="Value" value="{VALUE}" enabled="true" editable="true" filterSuggests="false" showValueHelp="true"
+								<Input id="productCharVal" fieldGroupIds="Value" value="{VALUE}" enabled="true" editable="true" filterSuggests="false" showValueHelp="true"
 										type="{path:'ATFOR', formatter: '.formatter.type_input'}"  visible="{= ${ATFOR} !== 'DATE' }"
 											maxSuggestionWidth="50%" valueHelpRequest="handleValueRequestCharVal"/>
 								<DatePicker fieldGroupIds="Value" value="{VALUE}" valueFormat="yyyy-MM-dd" displayFormat="long" visible="{= ${ATFOR} === 'DATE' }" />  
@@ -164,11 +129,12 @@
 		<footer>
 			<Bar>
 				<contentLeft>
-					<Button id="buttonScann" icon="sap-icon://bar-code" text="Mod Scanare"/>
+					<Button id="buttonScann" icon="sap-icon://bar-code" text="Mod Scanare" press="onPressScann"/>
 					<ToggleButton icon="sap-icon://broken-link" enabled="true" pressed="false" press="onPressEditMaterial" visible="false"/>
 				</contentLeft>
 				<contentRight>
-					<Button id="buttonSave" icon="sap-icon://save" press="onPressSave" type="Accept" text="Salvare confirmare"/>
+					<Button id="buttonSave" icon="sap-icon://save" press="onPressSave" type="Accept" text="Confirmare"/>
+					<Button id="buttonSavePrint" icon="sap-icon://tags" press="onPressSavePrint" type="Accept" text="Confirmare si Tiparire"/>
 					<!--
 					<Button id="buttonMessages" icon="sap-icon://alert" press="messagePopoverOpen" visible="{StateEnd}" text="{controls>/buttonMessagesText}" type="{controls>/buttonMessagesType}"/>
 					-->

@@ -4,12 +4,12 @@
 	<SelectDialog
 		title="Valori caracteristica"
 		class="sapUiPopupWithPadding"
-		items="{CharValCollection>/ROOT/OBJ_COLLECTION}"
+		items="{CharValCollection>/}"
 		search="_handleValueHelpSearch"
 		confirm="_handleValueHelpClose"
 		cancel="_handleValueHelpClose">
 		<StandardListItem
-			title="{CharValCollection>MATERIAL}"
-			description="{CharValCollection>MATL_DESC}" />
+			title="{CharValCollection>ATWRT}"
+			description="{CharValCollection>ATWTB}" />
 	</SelectDialog>
 </core:FragmentDefinition>

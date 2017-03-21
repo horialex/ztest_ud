@@ -3,6 +3,7 @@ var that;
 /* global location */
 sap.ui.define(["sap/ui/core/mvc/Controller",
 		"sap/ui/model/json/JSONModel",
+		"sap/ui/pp/mobi/model/OrderListModel",
 		'sap/m/Button',
 		'sap/m/Dialog',
 		'sap/m/Text',
@@ -14,7 +15,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		"sap/ui/pp/mobi/model/barcode"
 	],
 
-	function(Controller, JSONModel, Button, Dialog, Text, History, formatter, Filter, MessageToast, MessageBox, BarCodeScanner) {
+	function(Controller, JSONModel, OrderListModel, Button, Dialog, Text, History, formatter, Filter, MessageToast, MessageBox,
+		BarCodeScanner) {
 
 		"use strict";
 
@@ -50,15 +52,15 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			},
 
-			initOrderDetail: function(){
-				var oView = this.getView();	
+			initOrderDetail: function() {
+				var oView = this.getView();
 				var oOrderDetailModel = new JSONModel({
 					'State': 'init',
 					'txtYeldOrScrap': 'obtinuta',
 					'IsYeld': true,
 					'ForUpdate': false,
-					'SetLot':false,
-					'SetModForm':false,
+					'SetLot': false,
+					'SetModForm': false,
 					'messageSet': [{
 						TYPE: 'I',
 						MESSAGE: 'Momentan nu sunt erori'
@@ -74,9 +76,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				BarCodeScanner.connect(function(barcode) {
 					self.onScan(barcode);
 				});
-				
+
 				var oOwner = this.getOwnerComponent();
-				
+
 				var id = oEvent.getParameter("arguments").id;
 
 				var oView = this.getView();
@@ -85,16 +87,15 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oView.setModel(oOrderModel);
 				var oData = oView.getModel().getData();
 
-
 				var oOrderDetailModel = oView.getModel("orderdetail");
-				if (!oOrderDetailModel){
-					oOrderDetailModel = this.initOrderDetail();	
+				if (!oOrderDetailModel) {
+					oOrderDetailModel = this.initOrderDetail();
 				}
 
 				var oDataDetail = oOrderDetailModel.getData();
 
 				if (typeof(oData.ROOT) == "undefined") {
-					this.onNavBack(false);
+					this.onNavBack(oEvent);
 				}
 
 				// un shortcut la comanda
@@ -123,25 +124,23 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				if (oData.Order.HEADER.POSTDATE == '0000-00-00') {
 					oData.Order.HEADER.POSTDATE = new Date().toISOString().slice(0, 10);
 				}
-				
+
 				var oDataLines = oView.getModel("ProductionLineCollection").getData();
 				for (i in oDataLines.ROOT.LINES) {
 					if (oDataLines.ROOT.LINES[i].ARBPL === oData.Order.HEADER.PRODUCTION_LINE) {
-						if (oDataLines.ROOT.LINES[i].SET_PROD_LOT == 'X'){
+						if (oDataLines.ROOT.LINES[i].SET_PROD_LOT == '') {
+							oDataDetail.SetLot = false;
+						} else {
 							oDataDetail.SetLot = true;
 						}
-						else {
-							oDataDetail.SetLot = false;	
-						}
-						if (oDataLines.ROOT.LINES[i].SET_MOD_FORM == 'X'){
+						if (oDataLines.ROOT.LINES[i].SET_MOD_FORM == 'X') {
 							oDataDetail.SetModForm = true;
-						}
-						else {
-							oDataDetail.SetModForm = false;	
+						} else {
+							oDataDetail.SetModForm = false;
 						}
 					}
 				}
-				
+
 				oView.getModel().setData(oData);
 				oOrderDetailModel.setData(oDataDetail);
 				oView.setModel(oOrderDetailModel, "orderdetail");
@@ -158,21 +157,24 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var oChargs = this.getView().getModel("StockCollection").getData();
 				var i;
 				var gasit = false;
+				var comp;
+				var lot;
 				for (i in oChargs) {
-					var lot = oChargs[i];
+					lot = oChargs[i];
 					if (lot.CHARG == barcode) {
 						gasit = true;
 						break;
 					}
 				}
 				if (gasit == false) {
-					MessageBox.error("Lot " + barcode + " scanat nu exista");
+					//MessageBox.error("Lot " + barcode + " scanat nu exista");
+					MessageBox.alert("Lot " + barcode + " scanat nu exista");
 					return;
 				}
 
 				gasit = false;
 				for (i in oData.Order.COMPONENTS) {
-					var comp = oData.Order.COMPONENTS[i];
+					comp = oData.Order.COMPONENTS[i];
 					if (lot.CHARG == comp.BATCH) {
 						gasit = true;
 						break;
@@ -186,14 +188,14 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 				gasit = false;
 				for (i in oData.Order.COMPONENTS) {
-					var comp = oData.Order.COMPONENTS[i];
+					comp = oData.Order.COMPONENTS[i];
 					if (comp.MATERIAL == lot.MATERIAL && comp.BATCH == '') {
 						gasit = true;
 						break;
 					}
 				}
 				if (gasit == false) {
-					MessageBox.error("Materialul " + lot.MATL_DESC + ' nu se gaseste in lista de componente');
+					MessageBox.alert("Materialul " + lot.MATL_DESC + ' nu se gaseste in lista de componente');
 					return;
 				}
 
@@ -225,7 +227,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			 * 
 			 * @public
 			 */
-			onNavBack: function(reload) {
+			onNavBack: function(oEvent) {
 				var oHistory = History.getInstance();
 				var sPreviousHash = oHistory.getPreviousHash();
 				var oView = this.getView();
@@ -234,10 +236,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				localStorage.setItem(sNamespace + '.orders', oModelOrder.getJSON());
 
 				BarCodeScanner.disconnect();
-				if (reload){
-					oModelOrder.loadOrders();	
+				if (oEvent.sId !== "navButtonPress") {
+					oModelOrder.oController.handleRefresh();
+					//oController = this.getView().getController();
+					//oController.loadOrders();
+					//if (oModelOrder.TestData) {
+					//	oModelOrder.oController.handleLocalDataTest();
+					//} else {
+					//	oModelOrder.oController.loadOrders({'detail':'line','prod_line':value});
+					//}
 				}
-
 
 				if (sPreviousHash !== undefined) {
 					// The history contains a previous entry
@@ -310,7 +318,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			onPressSave: function(oEvent) {
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
-				this.confirmOrder(oData);
+				this.confirmOrder(oData, false);
+			},
+
+			onPressSavePrint: function(oEvent) {
+				var oView = this.getView();
+				var oData = oView.getModel().getData();
+				this.confirmOrder(oData, true);
 			},
 
 			onChangeRepPoint: function(oEvent) {
@@ -319,13 +333,14 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var oComponentsList = oView.byId("componentsList");
 				var oItem = oEvent.getSource();
 				var value = oItem.mProperties.selectedKey;
-				if (value != '') {
+				var oBinding;
+				if (value !== "") {
 					var oFilter = new Filter("ACTIVITY", sap.ui.model.FilterOperator.EQ, value);
 
-					var oBinding = oComponentsList.getBinding("items");
+					oBinding = oComponentsList.getBinding("items");
 					oBinding.filter(oFilter);
 				} else {
-					var oBinding = oComponentsList.getBinding("items");
+					oBinding = oComponentsList.getBinding("items");
 					oBinding.filter();
 				}
 				// trebuie sa actualizeaz lista de componente
@@ -449,7 +464,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			},
 
-			handleSplitItem: function(oEvent) {
+			onPressSplitItem: function(oEvent) {
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
 				var oItem = oEvent.getSource();
@@ -470,13 +485,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			onPressEditMaterial: function(oEvent) {
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
-				
+
 				var is_pressed = oEvent.getSource().getPressed();
-				
+
 				oData.MaterialIsEditable = is_pressed;
 				oView.getModel().setData(oData);
-				
 
+			},
+
+			onPressScann: function(oEvent) {
+				this.onNavBack(oEvent);
 			},
 
 			onError: function(msg) {
@@ -509,7 +527,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oView.getModel().setData(oData);
 			},
 
-			confirmOrder: function(oData) {
+			confirmOrder: function(oData, vPrint) {
+				var self = this;
 				var oView = this.getView(),
 					//currentUser = oView.getModel("currentUser").getData(),
 					oModelControls = oView.getModel("controls");
@@ -525,7 +544,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					oData.Order.HEADER.SCRAPQUANT = oData.Order.HEADER.YELD;
 					oData.Order.HEADER.ISYELD = '';
 				}
-
+				if (vPrint){
+					oData.Order.HEADER.DOPRINT = 'X';	
+				}
 				oView.setBusy(true);
 				// todo: de pus calea intr-o constanta
 				var url = oConfig.serverSAP + "/sap/bc/zppmobi?detail=confirm";
@@ -537,27 +558,27 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					if (success) {
 						var oDataSAP = oUpdateModel.getData();
 						if (oDataSAP.ROOT.RETURN.TYPE === "E") {
-							MessageBox.error("Comanda nu a fost confirmata. Error:" + oDataSAP.ROOT.RETURN.MESSAGE);
+							MessageBox.alert("Comanda nu a fost confirmata. Error:" + oDataSAP.ROOT.RETURN.MESSAGE);
 						} else {
 							MessageToast.show("Comanda a fost confirmata.");
 							//todo: de reincarcat lista de comenzi
-							this.onNavBack(true);
+
+							self.onNavBack(oEvent);
 						}
 
 					} else {
-						MessageBox.error("Nu se poate accesa serverul de SAP");
+						MessageBox.alert("Nu se poate accesa serverul de SAP");
 					}
 
 				});
 
 				var currentUser = this.getView().getModel("currentUser").getData();
 
-				var Order = {
-					'ROOT': oData.Order
-				};
+	 
+				var oParameters = {};
 
 				if (oConfig.notFromFiori) {
-					var oParameters = {
+					oParameters = {
 						"sap-client": oConfig.clientSAP,
 						"sap-user": currentUser.user,
 						"sap-password": currentUser.pass,
@@ -566,7 +587,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						"ORDER": JSON.stringify(oData.Order)
 					};
 				} else {
-					var oParameters = {
+					oParameters = {
 						"ORDER": JSON.stringify(oData.Order),
 						"detail": "confirm"
 					};
@@ -617,14 +638,28 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			},
 
 			handleValueRequestCharVal: function(oController) {
+				var oView = this.getView();
+				var oOwner = this.getOwnerComponent();
 				this.inputId = oController.oSource.sId;
 				var oItem = oController.getSource();
 				var oContext = oItem.getBindingContext();
-				var value = oContext.getProperty();	
+				var value = oContext.getProperty();
 				this.value = value;
 				this.BATCH_CLASS = value.BATCH_CLASS;
-			},	
+				var oCharValModel = new JSONModel(value.VALUES);
+				oOwner.setModel(oCharValModel, "CharValCollection");
+			 
+				if (!this._valueHelpDialogCharVal) {
+					this._valueHelpDialogCharVal = sap.ui.xmlfragment(
+						"sap.ui.pp.mobi.view.SHDialogCHARVAL",
+						this
+					);
+					this.getView().addDependent(this._valueHelpDialogCharVal);
 
+				}
+				// open value help dialog
+				this._valueHelpDialogCharVal.open();
+			},
 
 			handleValueRequestCharg: function(oController) {
 				this.inputId = oController.oSource.sId;
@@ -636,22 +671,22 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				this.value = value;
 				this.MATERIAL = value.MATERIAL;
 
-				if (!this._valueHelpDialog) {
-					this._valueHelpDialog = sap.ui.xmlfragment(
+				if (!this._valueHelpDialogCHARG) {
+					this._valueHelpDialogCHARG = sap.ui.xmlfragment(
 						"sap.ui.pp.mobi.view.SHDialogCHARG",
 						this
 					);
-					this.getView().addDependent(this._valueHelpDialog);
+					this.getView().addDependent(this._valueHelpDialogCHARG);
 
 				}
 				var oFilter = new Filter("MATERIAL", sap.ui.model.FilterOperator.EQ, value.MATERIAL);
-				var oItems = this._valueHelpDialog.getBinding("items");
+				var oItems = this._valueHelpDialogCHARG.getBinding("items");
 				if (oItems) {
 					oItems.filter([oFilter]);
 				}
 
 				// open value help dialog
-				this._valueHelpDialog.open();
+				this._valueHelpDialogCHARG.open();
 			},
 
 			_handleValueHelpSearchCharg: function(oEvent) {
@@ -688,22 +723,26 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oEvent.getSource().getBinding("items").filter([]);
 			},
 
+
+
+
+
 			handleValueRequestMatnr: function(oController) {
 				this.inputId = oController.oSource.sId;
 				// create value help dialog
 
-				if (!this._valueHelpDialog) {
-					this._valueHelpDialog = sap.ui.xmlfragment(
+				if (!this._valueHelpDialogMATNR) {
+					this._valueHelpDialogMATNR = sap.ui.xmlfragment(
 						"sap.ui.pp.mobi.view.SHDialogMATNR",
 						this
 					);
-					this.getView().addDependent(this._valueHelpDialog);
+					this.getView().addDependent(this._valueHelpDialogMATNR);
 					//var oMaterialsModel = this.getOwnerComponent().getModel("MaterialsCollection");
 					//this._valueHelpDialog.setModel(oMaterialsModel,"MaterialsCollection");			
 				}
 
 				// open value help dialog
-				this._valueHelpDialog.open();
+				this._valueHelpDialogMATNR.open();
 			},
 
 			_handleValueHelpSearch: function(evt) {
@@ -718,9 +757,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			_handleValueHelpClose: function(oEvent) {
 				var oSelectedItem = oEvent.getParameter("selectedItem");
 				if (oSelectedItem) {
-					var productInput = this.getView().byId(this.inputId);
-					productInput.setValue(oSelectedItem.getTitle());
-					productInput.setDescription(oSelectedItem.getDescription());
+					var fieldInput = this.getView().byId(this.inputId);
+					fieldInput.setValue(oSelectedItem.getTitle());
+					fieldInput.setDescription(oSelectedItem.getDescription());
 				}
 				oEvent.getSource().getBinding("items").filter([]);
 			}

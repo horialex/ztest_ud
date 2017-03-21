@@ -2,10 +2,11 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
 	"sap/ui/model/json/JSONModel",
+	"sap/ui/pp/mobi/model/OrderListModel",
 	"sap/m/MessageToast",
 	"sap/m/MessageBox"
 
-], function(UIComponent, Device, JSONModel, MessageToast, MessageBox) {
+], function(UIComponent, Device, JSONModel,OrderListModel, MessageToast, MessageBox) {
 	"use strict";
 
 	return UIComponent.extend("sap.ui.pp.mobi.Component", {
@@ -34,32 +35,36 @@ sap.ui.define([
 			//http://hvsrvsap3.rombat.local:8000/sap/bc/ui2/start_up
 			//		var deviceModel = new sap.ui.model.json.JSONModel({
 			oModel = new JSONModel({
-				user: "",
-				pass: ""
+				user: "dhongu",
+				pass: "Milka2017,"
 			});
 			//oModel.setDefaultBindingMode("OneWay");
 			this.setModel(oModel, "currentUser");
 
-			oConfig = {
+			var oConfig = {
 				btnLogout: false, //ascundere buton Logout daca nu e nimeni logat
 				btnAuthen: true,
-				clientSAP: "400",
+				clientSAP: "400",  // de extras clientul din cale
 				serverSAP: jQuery(location).attr('origin'), //"http://hvsrvsap3.rombat.local:8000",
 				testMode: false,
+				params : jQuery(location).attr('search'),
 				notFromFiori: notFromFiori
 			};
-			if (oConfig.serverSAP.search('rombat') === -1) {
-				oConfig.serverSAP = "https://hvsrvsap3.rombat.local:8800";
-			}
-			if (oConfig.serverSAP.search('ondemand') === -1) {
+			
+			
+			if (oConfig.serverSAP.search('ondemand') !== -1) {
 				oConfig.testMode = true;
+			}			
+			if (oConfig.serverSAP.search('rombat') === -1) {
+				oConfig.serverSAP = "http://hvsrvsap3.rombat.local:8000";
 			}
+
 			oModel = new JSONModel(oConfig);
 
 			//oModel.setDefaultBindingMode("OneWay");
 			this.setModel(oModel, "config");
 
-			var oConfig = this.getMetadata().getConfig();
+			oConfig = this.getMetadata().getConfig();
 			var sNamespace = this.getMetadata().getManifestEntry("sap.app").id;
 
  
@@ -72,7 +77,7 @@ sap.ui.define([
 		},
 
 		//Functia care incarca date din SAP
-		_loadResource: function(oParam, RequestCompleted) {
+		_loadResource: function(oDataModel,oParam, RequestCompleted) {
 
 			var oConfig = this.getModel("config").getData();
 
@@ -84,8 +89,8 @@ sap.ui.define([
 
 			//var url = oConfig.orderServer + "&resursa="+currentUser.user+"&pass="+currentUser.pass+"&detail=all";
 			//var url = oConfig.orderServer + "&resursa="+currentUser.user+"&pass="+currentUser.pass+"&detail=all";
-			var url = oConfig.serverSAP + "/sap/bc/zppmobi"; //?detail=" + oResource;
-			var oDataModel = new JSONModel();
+			var url = oConfig.serverSAP + "/sap/bc/zppmobi"+oConfig.params; //?detail=" + oResource;
+			
 
 
 			var parameters = {};

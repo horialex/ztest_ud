@@ -1,5 +1,11 @@
-<mvc:View controllerName="sap.ui.pp.mobi.controller.OrderList" xmlns:u="sap.ui.unified" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core">
+<mvc:View controllerName="sap.ui.pp.mobi.controller.OrderList"
+xmlns:u="sap.ui.unified"
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+ 
+	
+	>
 	<!--
 	<u:Shell id="myShell" icon="{/logo}">
 		<u:headItems>
@@ -31,8 +37,8 @@
 					<SearchField width="50%" search="onFilterOrders" selectOnFocus="false"/>
 					-->
 					 
-					<Title text="Linia de productie:"/>
-					<Select id="productionLine" width="40%"  change="onChangeProductionLine" value="{ProductionLine}"
+					<Title text="Linia productie:"/>
+					<Select id="productionLine"  width="40%"  change="onChangeProductionLine" value="{ProductionLine}"
 					showSecondaryValues="true" items="{ path: 'ProductionLineCollection>/ROOT/LINES', sorter: { path: 'ARBPL' } }">
 						<core:ListItem  key="{ProductionLineCollection>ARBPL}" text="{ProductionLineCollection>ARBPL} {ProductionLineCollection>SHORT_TEXT}" 
 						additionalText="{ProductionLineCollection>WERKS} {ProductionLineCollection>ARBPL} {ProductionLineCollection>SET_PROD_LOT}"/>
@@ -41,8 +47,11 @@
 					<!--
 					<PullToRefresh	id="pullToRefresh" refresh="handleRefresh" /> 
 					-->
-					<SearchField width="30%" search="onFilterOrders"/>
-			
+					<SearchField width="20%" placeholder="Cauta dupa nr comanda" search="onFilterByOrder"/>
+					<SearchField width="20%"  placeholder="Cauta dupa data" search="onFilterByDate"/>
+      
+		 
+					
 				</Toolbar>
 			</headerToolbar>
 			<items>
@@ -50,6 +59,8 @@
 					<attributes>
 						<ObjectAttribute title="Produs" text="{HEADER/MATERIAL}"/>
 						<ObjectAttribute title="Cantitate planificata" text="{HEADER/TOTAL_PLORD_QTY} {path:'HEADER/BASE_UOM', formatter: '.formatter.uom'}"/>
+						<ObjectAttribute title="Data Start" text="{HEADER/ORDER_START_DATE}" />
+						<ObjectAttribute title="Data Final" text="{HEADER/ORDER_FIN_DATE}" />
 						<ObjectAttribute title="Observatie" text="{HEADER/ZZOBS}" />
 					</attributes>
 				</ObjectListItem>

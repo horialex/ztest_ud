@@ -1,6 +1,7 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
+	"sap/ui/pp/mobi/model/OrderListModel",
 	"sap/ui/pp/mobi/model/formatter",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
@@ -8,7 +9,7 @@ sap.ui.define([
 	"sap/m/MessageBox",
 	'sap/m/GroupHeaderListItem',
 	"sap/ui/pp/mobi/model/barcode"
-], function(Controller, JSONModel, formatter, Filter, FilterOperator, MessageToast, MessageBox, GroupHeaderListItem, BarCodeScanner) {
+], function(Controller, JSONModel, OrderListModel, formatter, Filter, FilterOperator, MessageToast, MessageBox, GroupHeaderListItem, BarCodeScanner) {
 
 	"use strict";
 
@@ -42,27 +43,31 @@ sap.ui.define([
 		loadProductionLines: function() {
 			var oView = this.getView();
 			var oOwner = this.getOwnerComponent();
-			oOwner._loadResource({'detail':'prod_lines'}, function(oRequest) {
+			var oDataModel = new JSONModel();
+			oOwner._loadResource(oDataModel, {'detail':'prod_lines'}, function(oRequest) {
 				oView.setBusy(false);
 				var success = oRequest.getParameter("success");
-				var oDataModel =  new JSONModel();
+				
 				if (success) {
 					oDataModel = oRequest.oSource;
 					oOwner.setModel(oDataModel, "ProductionLineCollection");
 				} else {
 
-					MessageBox.error("Nu se poate accesa serverul de SAP");
+					MessageBox.alert("Nu se poate accesa serverul de SAP");
 				}
 			});
 		},
 
 		loadOrders: function(oParam) {
-
+			var self = this;
 			var oView = this.getView();
 			oView.setBusy(true);
 			var oOwner = this.getOwnerComponent();
-
-			oOwner._loadResource(oParam, function(oRequest) {
+			//var oDataModel = new JSONModel();
+			var  oDataModel = new OrderListModel();
+			oDataModel.oController = this;
+			oDataModel.TestData = false;
+			oOwner._loadResource(oDataModel, oParam, function(oRequest) {
 				oView.setBusy(false);
 				var success = oRequest.getParameter("success");
 				var oAllDataModel = oRequest.oSource;
@@ -84,7 +89,10 @@ sap.ui.define([
 						}
 					};
 
-					var oOrderModel = new JSONModel(oOrderData);
+					//var oOrderModel = new JSONModel(oOrderData);
+					var  oOrderModel = new OrderListModel(oOrderData);
+					oOrderModel.oController = self;
+					oOrderModel.TestData = false;
 					oOwner.setModel(oOrderModel, "orderlist");
 					oView.setModel(oOrderModel);
 
@@ -92,7 +100,7 @@ sap.ui.define([
 					oOwner.setModel(oStockModel, "StockCollection");
 
 				} else {
-					MessageBox.error("Nu se poate accesa serverul de SAP");
+					MessageBox.alert("Nu se poate accesa serverul de SAP");
 				}
 
 			});
@@ -132,7 +140,7 @@ sap.ui.define([
 			oBinding.filter(aFilter);
 		},
 
-		onFilterOrders: function(oEvent) {
+		onFilterByOrder        : function(oEvent) {
 			// build filter array
 			var aFilter = [];
 			var sQuery = oEvent.getParameter("query");
@@ -146,6 +154,19 @@ sap.ui.define([
 			oBinding.filter(aFilter);
 		},
 
+		onFilterByDate        : function(oEvent) {
+			// build filter array
+			var aFilter = [];
+			var sQuery = oEvent.getParameter("query");
+			if (sQuery) {
+				aFilter.push(new Filter("HEADER/ORDER_FIN_DATE", FilterOperator.EndsWith, sQuery));
+			}
+
+			// filter binding
+			var oList = this.getView().byId("orderList");
+			var oBinding = oList.getBinding("items");
+			oBinding.filter(aFilter);
+		},
 		getGroupHeader: function (oGroup){
 			return new GroupHeaderListItem( {
 				title: 'Prioritate:'+ oGroup.key,
@@ -176,112 +197,9 @@ sap.ui.define([
 			});
 		},
 
-		/*
-				handleRefresh: function(oEvent) {
-					var oView = this.getView();
-					oView.setBusy(true);
-					var oData = oView.getModel().getData();
-					var oConfig = this.getView().getModel("config").getData();
-					var oOwner = this.getOwnerComponent();
-					var sNamespace = this.getOwnerComponent().getMetadata().getManifestEntry("sap.app").id;
-
-					// curent user	http://hvsrvsap3.rombat.local:8000/sap/bc/ui2/start_up
-					var currentUser = this.getView().getModel("currentUser").getData();
-
-					//var url = oConfig.orderServer + "&resursa="+currentUser.user+"&pass="+currentUser.pass+"&detail=all";
-					var url = oConfig.serverSAP + "/sap/bc/zppmobi?detail=all";
-					var oAllDataModel = new JSONModel();
-
-
-		 
-					
-					var dataModel = this.getView().getModel("orderlist"); 
-					if(dataModel){
-					    dataModel.setData(null);
-					    dataModel.updateBindings(true);
-					}
-
-					
-		 
-					oAllDataModel.attachRequestCompleted(function(oEvent) {
-						oView.setBusy(false);
-						var success = oEvent.getParameter("success");
-						if (success) {
-							var oData = oAllDataModel.getData();
-
-							MessageToast.show("Date incarcate din SAP cu succes");
-							oData.User = currentUser.user;
-							oAllDataModel.refresh();
-							localStorage.setItem(sNamespace + '.orders', oAllDataModel.getJSON());
-
-							var oAllData = oAllDataModel.getData();
-							var oOrderData = {
-								"ROOT": {
-									"ORDERS": oAllData.ROOT.ORDERS
-								}
-							};
-							var oStockData = {
-								"ROOT": {
-									"STOCK": oAllData.ROOT.STOCK
-								}
-							};
-
-							var oOrderModel = new JSONModel(oOrderData);
-							oOwner.setModel(oOrderModel, "orderlist");
-							oView.setModel(oOrderModel);
-
-							var oStockModel = new JSONModel(oStockData);
-							oOwner.setModel(oStockModel, "StockCollection");
-
-						} else {
-							MessageBox.error("Nu se poate accesa serverul de SAP");
-						}
-
-					});
-
-					var parameters = {
-						"sap-client": oConfig.clientSAP,
-						"sap-user": currentUser.user,
-
-						//"sap-sec_session_created":"X",
-						"sap-password": currentUser.pass,
-						"sap-language": "RO"
-					};
-					if (oData.ProdLine){
-						parameters.ProdLine = 	oData.ProdLine;
-					}        
-					var headers = {};
-
-					oAllDataModel.loadData(url, parameters, true, "GET", false, false, headers);
-
-				},
-		*/
-		/*
-				handleLocalData: function(oEvent) {
-					var sNamespace = this.getOwnerComponent().getMetadata().getManifestEntry("sap.app").id;
-					var orders_json = localStorage.getItem(sNamespace + '.orders');
-
-					var oModelcurrentUser = this.getView().getModel("currentUser");
-
-					if (orders_json) {
-						var oOrderModel = new JSONModel(JSON.parse(orders_json));
-						//oOrderModel.attachRequestCompleted(function(oEvent) {
-						oModelcurrentUser.getData().user = oOrderModel.getData().User;
-						oModelcurrentUser.refresh();
-						//});
-					} else {
-						var oConfig = this.getOwnerComponent().getMetadata().getConfig();
-						var sNamespace = this.getOwnerComponent().getMetadata().getManifestEntry("sap.app").id;
-						var oOrderModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, '/Orders.json'));
-						MessageToast.show("Date de locale incarcate cu succes");
-					}
-
-					this.getOwnerComponent().setModel(oOrderModel, "orderlist");
-					this.getView().setModel(oOrderModel);
-				},
-		*/
+ 
 		handleLocalDataTest: function(oEvent) {
-
+			var self = this;
 			var oOwner = this.getOwnerComponent();
 			var oView = this.getView();
 			var sNamespace = oOwner.getMetadata().getManifestEntry("sap.app").id;
@@ -290,7 +208,11 @@ sap.ui.define([
 
 			var oConfig = oOwner.getMetadata().getConfig();
 
-			var oAllDataModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, '/AllData.json'));
+
+			//var oAllDataModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, '/AllData.json'));
+			var oAllDataModel = new OrderListModel(jQuery.sap.getModulePath(sNamespace, '/AllData.json'));
+			oAllDataModel.oController = self;
+			oAllDataModel.TestData = true;
 			var oDataLines = new JSONModel(jQuery.sap.getModulePath(sNamespace, '/ProductionLine.json'));
 
 			oOwner.setModel(oDataLines, "ProductionLineCollection");
@@ -313,8 +235,11 @@ sap.ui.define([
 					}
 				};
 
-				var oOrderModel = new JSONModel(oOrderData);
+				//var oOrderModel = new JSONModel(oOrderData);
+				var oOrderModel = new OrderListModel(oOrderData);	
 				oOwner.setModel(oOrderModel, "orderlist");
+				oOrderModel.oController = self;
+				oOrderModel.TestData = true;
 				oView.setModel(oOrderModel);
 
 				var oStockModel = new JSONModel(oStockData);
@@ -475,7 +400,7 @@ sap.ui.define([
 							that.handleRefreshSO(evt);
 
 						} else {
-							sap.m.MessageBox.alert("Introduceti utilizator / parola !", {
+							MessageBox.alert("Introduceti utilizator / parola !", {
 								icon: sap.m.MessageBox.Icon.ERROR,
 								title: "Atentie!",
 								onClose: null,

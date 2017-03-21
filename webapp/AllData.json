@@ -46,7 +46,8 @@
 				"ISYELD": "",
 				"YELD": 0.0,
 				"MOD_FORM": "",
-				"CLASS": "LOT_NEFORMATE"
+				"CLASS": "LOT_NEFORMATE",
+				"NLENR": ""
 			},
 			"COMPONENTS": [{
 				"MATERIAL": "100000086",
@@ -241,31 +242,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -496,31 +497,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -751,31 +752,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -952,31 +953,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -1153,31 +1154,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -1354,31 +1355,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -1555,31 +1556,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -1756,31 +1757,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -1975,31 +1976,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -2176,31 +2177,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -2431,31 +2432,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -2686,31 +2687,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -2941,31 +2942,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -3196,31 +3197,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -3451,31 +3452,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -3706,31 +3707,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -3961,31 +3962,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -4216,31 +4217,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -4471,31 +4472,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -4726,31 +4727,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -4981,31 +4982,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -5236,31 +5237,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -5491,31 +5492,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -5692,31 +5693,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -5947,31 +5948,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -6202,31 +6203,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -6457,31 +6458,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -6712,31 +6713,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -6967,31 +6968,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -7232,31 +7233,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -7497,31 +7498,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -7798,31 +7799,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -8099,31 +8100,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -8400,31 +8401,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -8655,31 +8656,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -8910,31 +8911,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -9165,31 +9166,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -9420,31 +9421,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -9675,31 +9676,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -9930,31 +9931,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -10185,31 +10186,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -10440,31 +10441,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -10695,31 +10696,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -10950,31 +10951,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -11205,31 +11206,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -11460,31 +11461,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -11751,31 +11752,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -12042,31 +12043,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -12333,31 +12334,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -12534,31 +12535,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -12735,31 +12736,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -12936,31 +12937,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -13137,31 +13138,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -13356,31 +13357,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -13557,31 +13558,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -13758,31 +13759,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -13959,31 +13960,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -14178,31 +14179,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -14397,31 +14398,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -14598,31 +14599,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -14799,31 +14800,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -15000,31 +15001,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -15201,31 +15202,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -15420,31 +15421,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -15639,31 +15640,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -15840,31 +15841,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -16041,31 +16042,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -16242,31 +16243,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -16443,31 +16444,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -16644,31 +16645,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -16863,31 +16864,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -17064,31 +17065,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -17265,31 +17266,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -17466,31 +17467,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -17667,31 +17668,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -17868,31 +17869,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -18069,31 +18070,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -18288,31 +18289,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -18507,31 +18508,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -18708,31 +18709,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -18909,31 +18910,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -19110,31 +19111,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -19329,31 +19330,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -19530,31 +19531,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -19731,31 +19732,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -19932,31 +19933,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -20133,31 +20134,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -20334,31 +20335,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -20535,31 +20536,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -20736,31 +20737,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -20937,31 +20938,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -21138,31 +21139,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -21339,31 +21340,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -21540,31 +21541,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -21741,31 +21742,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -21942,31 +21943,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -22143,31 +22144,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -22344,31 +22345,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -22545,31 +22546,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -22746,31 +22747,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -22947,31 +22948,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -23166,31 +23167,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -23385,31 +23386,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -23604,31 +23605,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
@@ -23823,31 +23824,31 @@
 				"ATNAM": "Z_DATA_INTRARE",
 				"ATBEZ": "Data ultimei intr.bunuri",
 				"ATFOR": "DATE",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "SCHIMB",
 				"ATBEZ": "Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "OPERATOR_LM",
 				"ATBEZ": "Operator linie montaj",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "TIMESTAMP",
 				"ATBEZ": "Timestamp",
 				"ATFOR": "TIME",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}, {
 				"ATNAM": "COD_SCHIMB",
 				"ATBEZ": "Cod Schimb",
 				"ATFOR": "CHAR",
-				"VELUES": [],
+				"VALUES": [],
 				"VALUE": ""
 			}]
 		}, {
