@@ -53,7 +53,7 @@ sap.ui.define([
 					oOwner.setModel(oDataModel, "ProductionLineCollection");
 				} else {
 
-					MessageBox.alert("Nu se poate accesa serverul de SAP");
+					MessageBox.error("Nu se poate accesa serverul de SAP");
 				}
 			});
 		},
@@ -100,7 +100,7 @@ sap.ui.define([
 					oOwner.setModel(oStockModel, "StockCollection");
 
 				} else {
-					MessageBox.alert("Nu se poate accesa serverul de SAP");
+					MessageBox.error("Nu se poate accesa serverul de SAP");
 				}
 
 			});
@@ -397,10 +397,10 @@ sap.ui.define([
 							oModelcurrentUser.getData().user = oLogonDialog.getModel().getData().user;
 							oModelcurrentUser.getData().pass = oLogonDialog.getModel().getData().pass;
 							oModelcurrentUser.refresh();
-							that.handleRefreshSO(evt);
+							that.loadProductionLines();
 
 						} else {
-							MessageBox.alert("Introduceti utilizator / parola !", {
+							MessageBox.error("Introduceti utilizator / parola !", {
 								icon: sap.m.MessageBox.Icon.ERROR,
 								title: "Atentie!",
 								onClose: null,

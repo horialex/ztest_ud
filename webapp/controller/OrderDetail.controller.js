@@ -167,8 +167,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					}
 				}
 				if (gasit == false) {
-					//MessageBox.error("Lot " + barcode + " scanat nu exista");
-					MessageBox.alert("Lot " + barcode + " scanat nu exista");
+					MessageBox.error("Lot " + barcode + " scanat nu exista");
 					return;
 				}
 
@@ -189,13 +188,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				gasit = false;
 				for (i in oData.Order.COMPONENTS) {
 					comp = oData.Order.COMPONENTS[i];
-					if (comp.MATERIAL == lot.MATERIAL && comp.BATCH == '') {
+					if (comp.MATERIAL === lot.MATERIAL && comp.BATCH === '') {
 						gasit = true;
 						break;
 					}
 				}
-				if (gasit == false) {
-					MessageBox.alert("Materialul " + lot.MATL_DESC + ' nu se gaseste in lista de componente');
+				if (gasit === false) {
+					MessageBox.error("Materialul " + lot.MATL_DESC + ' nu se gaseste in lista de componente');
 					return;
 				}
 
@@ -392,7 +391,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					var index = 0;
 					var com;
 					for (com in oData.Order.COMPONENTS) {
-						if (value.MATERIAL == oData.Order.COMPONENTS[com].MATERIAL) {
+						if (value.MATERIAL === oData.Order.COMPONENTS[com].MATERIAL) {
 							index = com;
 						}
 					}
@@ -514,9 +513,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var qty;
 				for (comp in oData.Order.COMPONENTS) {
 					// se recalculeaza cantitatea doar la produele la care nu a fost scanat un lot
-					if (oData.Order.COMPONENTS[comp].BATCH == '') {
+					if (oData.Order.COMPONENTS[comp].BATCH === '') {
 						qty = rap * oData.Order.COMPONENTS[comp].REQ_QUAN;
-						if (oData.Order.COMPONENTS[comp].UOM == 'ST') {
+						if (oData.Order.COMPONENTS[comp].UOM === 'ST') {
 							decimals = 0;
 						} else {
 							decimals = 2;
@@ -558,7 +557,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					if (success) {
 						var oDataSAP = oUpdateModel.getData();
 						if (oDataSAP.ROOT.RETURN.TYPE === "E") {
-							MessageBox.alert("Comanda nu a fost confirmata. Error:" + oDataSAP.ROOT.RETURN.MESSAGE);
+							MessageBox.error("Comanda nu a fost confirmata. Error:" + oDataSAP.ROOT.RETURN.MESSAGE);
 						} else {
 							MessageToast.show("Comanda a fost confirmata.");
 							//todo: de reincarcat lista de comenzi
@@ -567,7 +566,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						}
 
 					} else {
-						MessageBox.alert("Nu se poate accesa serverul de SAP");
+						MessageBox.error("Nu se poate face confirmarea. Eroare de comunicare");
 					}
 
 				});
@@ -680,6 +679,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 				}
 				var oFilter = new Filter("MATERIAL", sap.ui.model.FilterOperator.EQ, value.MATERIAL);
+				// de adaugat si filtrui prin care sa nu se permita filtrul pe materialul actual
 				var oItems = this._valueHelpDialogCHARG.getBinding("items");
 				if (oItems) {
 					oItems.filter([oFilter]);

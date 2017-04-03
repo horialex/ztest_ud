@@ -20,21 +20,21 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_belize "],
+		"supportedThemes": ["sap_belize ", "sap_bluecrystal"],
 		"icons": {
 			"icon": "sap-icon://activities",
 			"phone": "sap-icon://activities",
 			"phone@2": "sap-icon://activities",
 			"tablet": "sap-icon://activities",
 			"tablet@2": "sap-icon://activities",
-			"favIcon": ""
+			"favIcon": "sap-icon://activities"
 		}
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": "sap.ui.pp.mobi.view.App",
 		"dependencies": {
-			"minUI5Version": "1.28",
+			"minUI5Version": "1.30",
 			"libs": {
 				"sap.m": {}
 			}
