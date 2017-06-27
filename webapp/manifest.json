@@ -20,7 +20,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_belize ", "sap_bluecrystal"],
+		"supportedThemes": ["sap_bluecrystal", "sap_belize "],
 		"icons": {
 			"icon": "sap-icon://activities",
 			"phone": "sap-icon://activities",

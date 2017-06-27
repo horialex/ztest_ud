@@ -37,6 +37,7 @@
 					<core:Title text="Depozitare" />
 					<Label text="Lot" visible="{orderdetail>/SetLot}"/>
 					<Input fieldGroupIds="2" name="Input_lot" value="{HEADER/BATCH}" visible="{orderdetail>/SetLot}"/>
+					<Button text="Lot no"  visible="{orderdetail>/SetLot}" icon="sap-icon://create" id="btnCreateLot" press="onPressCreateLot" />
 					<Label text="Modul formare" visible="{orderdetail>/SetModForm}"/>
 					<Input fieldGroupIds="2" name="Input_mod_formare" value="{HEADER/MOD_FORM}" visible="{orderdetail>/SetModForm}"/>
 					<Label text="Unitate depozitare"/>
@@ -89,7 +90,7 @@
 									maxSuggestionWidth="50%" valueHelpRequest="handleValueRequestCharg"/>
 								<HBox>
 									<Input value="{CONF_QUAN}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number" class="sapInputRight"/>
-									<Button enabled="{split}" icon="sap-icon://duplicate" id="btnSplitItem" press="onPressSplitItem"/>
+									<Button enabled="{split}" icon="sap-icon://duplicate" id="btnSplitItem" press="onPressSplitItem" type="Emphasized"/>
 									<!--	<Button icon="sap-icon://add-product" id="btnReplaceItem" press="handleReplaceItem"/> -->
 								</HBox>
 							</cells>

@@ -9,7 +9,8 @@ sap.ui.define([
 	"sap/m/MessageBox",
 	'sap/m/GroupHeaderListItem',
 	"sap/ui/pp/mobi/model/barcode"
-], function(Controller, JSONModel, OrderListModel, formatter, Filter, FilterOperator, MessageToast, MessageBox, GroupHeaderListItem, BarCodeScanner) {
+], function(Controller, JSONModel, OrderListModel, formatter, Filter, FilterOperator, MessageToast, MessageBox, GroupHeaderListItem,
+	BarCodeScanner) {
 
 	"use strict";
 
@@ -44,10 +45,12 @@ sap.ui.define([
 			var oView = this.getView();
 			var oOwner = this.getOwnerComponent();
 			var oDataModel = new JSONModel();
-			oOwner._loadResource(oDataModel, {'detail':'prod_lines'}, function(oRequest) {
+			oOwner._loadResource(oDataModel, {
+				'detail': 'prod_lines'
+			}, function(oRequest) {
 				oView.setBusy(false);
 				var success = oRequest.getParameter("success");
-				
+
 				if (success) {
 					oDataModel = oRequest.oSource;
 					oOwner.setModel(oDataModel, "ProductionLineCollection");
@@ -64,7 +67,7 @@ sap.ui.define([
 			oView.setBusy(true);
 			var oOwner = this.getOwnerComponent();
 			//var oDataModel = new JSONModel();
-			var  oDataModel = new OrderListModel();
+			var oDataModel = new OrderListModel();
 			oDataModel.oController = this;
 			oDataModel.TestData = false;
 			oOwner._loadResource(oDataModel, oParam, function(oRequest) {
@@ -90,7 +93,7 @@ sap.ui.define([
 					};
 
 					//var oOrderModel = new JSONModel(oOrderData);
-					var  oOrderModel = new OrderListModel(oOrderData);
+					var oOrderModel = new OrderListModel(oOrderData);
 					oOrderModel.oController = self;
 					oOrderModel.TestData = false;
 					oOwner.setModel(oOrderModel, "orderlist");
@@ -110,15 +113,21 @@ sap.ui.define([
 			var oView = this.getView();
 			var oItem = oEvent.getSource();
 			var value = oItem.mProperties.selectedKey;
-			this.loadOrders({'detail':'line','prod_line':value});
+			this.loadOrders({
+				'detail': 'line',
+				'prod_line': value
+			});
 		},
 
 		handleRefresh: function(oEvent) {
- 
+
 			var oItem = this.getView().byId("productionLine");
 			var value = oItem.mProperties.selectedKey;
-			this.loadOrders({'detail':'line','prod_line':value});
-	 
+			this.loadOrders({
+				'detail': 'line',
+				'prod_line': value
+			});
+
 		},
 
 		onObjectMatched: function(oEvent) {
@@ -140,7 +149,7 @@ sap.ui.define([
 			oBinding.filter(aFilter);
 		},
 
-		onFilterByOrder        : function(oEvent) {
+		onFilterByOrder: function(oEvent) {
 			// build filter array
 			var aFilter = [];
 			var sQuery = oEvent.getParameter("query");
@@ -154,7 +163,7 @@ sap.ui.define([
 			oBinding.filter(aFilter);
 		},
 
-		onFilterByDate        : function(oEvent) {
+		onFilterByDate: function(oEvent) {
 			// build filter array
 			var aFilter = [];
 			var sQuery = oEvent.getParameter("query");
@@ -167,13 +176,12 @@ sap.ui.define([
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
 		},
-		getGroupHeader: function (oGroup){
-			return new GroupHeaderListItem( {
-				title: 'Prioritate:'+ oGroup.key,
+		getGroupHeader: function(oGroup) {
+			return new GroupHeaderListItem({
+				title: 'Prioritate:' + oGroup.key,
 				upperCase: false
-			} );
+			});
 		},
-
 
 		/**
 		 * Event handler when a table item gets pressed
@@ -197,7 +205,6 @@ sap.ui.define([
 			});
 		},
 
- 
 		handleLocalDataTest: function(oEvent) {
 			var self = this;
 			var oOwner = this.getOwnerComponent();
@@ -208,7 +215,6 @@ sap.ui.define([
 
 			var oConfig = oOwner.getMetadata().getConfig();
 
-
 			//var oAllDataModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, '/AllData.json'));
 			var oAllDataModel = new OrderListModel(jQuery.sap.getModulePath(sNamespace, '/AllData.json'));
 			oAllDataModel.oController = self;
@@ -217,7 +223,6 @@ sap.ui.define([
 
 			oOwner.setModel(oDataLines, "ProductionLineCollection");
 			oView.setModel(oDataLines, "ProductionLineCollection");
-			 
 
 			MessageToast.show("Date de TEST incarcate cu succes");
 
@@ -236,7 +241,7 @@ sap.ui.define([
 				};
 
 				//var oOrderModel = new JSONModel(oOrderData);
-				var oOrderModel = new OrderListModel(oOrderData);	
+				var oOrderModel = new OrderListModel(oOrderData);
 				oOwner.setModel(oOrderModel, "orderlist");
 				oOrderModel.oController = self;
 				oOrderModel.TestData = true;
@@ -254,35 +259,36 @@ sap.ui.define([
 			MessageBox.confirm("Sunteti sigur?", fnCallbackConfirm);
 
 			function fnCallbackConfirm(bResult) {
-				var oOrderModel = new JSONModel({});
+				if (bResult == 'OK') {
+					var oOrderModel = new JSONModel({});
 
-				oOwnerComponent.setModel(oOrderModel, "orderlist");
-				oView.setModel(oOrderModel);
+					oOwnerComponent.setModel(oOrderModel, "orderlist");
+					oView.setModel(oOrderModel);
 
-				oView.getModel("currentUser").getData().user = "";
-				oView.getModel("currentUser").getData().pass = "";
-				oView.getModel("currentUser").refresh();
-				// trebuie trimis un request la adresa /sap/public/bc/icf/logoff
+					oView.getModel("currentUser").getData().user = "";
+					oView.getModel("currentUser").getData().pass = "";
+					oView.getModel("currentUser").refresh();
+					// trebuie trimis un request la adresa /sap/public/bc/icf/logoff
 
-				var oConfig = oView.getModel("config").getData();
+					var oConfig = oView.getModel("config").getData();
 
-				jQuery.ajax({
-					url: oConfig.serverSAP + "/sap/public/bc/icf/logoff",
-					async: false
-				}).complete(function() {
-					location.reload();
-				});
+					jQuery.ajax({
+						url: oConfig.serverSAP + "/sap/public/bc/icf/logoff",
+						async: false
+					}).complete(function() {
+						location.reload();
+					});
+				}
+
 			}
+
 		},
 
 		handlePressConfiguration: function(oEvent) {
 			//var bundle = this.getView().getModel("i18n").getResourceBundle();
 
-
-
 			var oModelConfig = this.getView().getModel("config");
 
-		
 			var that = this;
 
 			var oConfigDialog = new sap.m.Dialog({
@@ -323,10 +329,9 @@ sap.ui.define([
 					}
 
 					oConfigDialog.destroy();
-				
+
 				}
 			});
-	
 
 			var oModel = new JSONModel(JSON.parse(oModelConfig.getJSON()));
 
@@ -356,8 +361,6 @@ sap.ui.define([
 		handleAuthentification: function(oEvent) {
 
 			//var bundle = this.getView().getModel("i18n").getResourceBundle();
-
-	
 
 			var oModelcurrentUser = this.getView().getModel("currentUser");
 

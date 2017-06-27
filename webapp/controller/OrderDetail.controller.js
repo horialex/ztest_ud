@@ -155,6 +155,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
 				var oChargs = this.getView().getModel("StockCollection").getData();
+				oChargs = oChargs.ROOT.STOCK;
 				var i;
 				var gasit = false;
 				var comp;
@@ -315,15 +316,29 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			},
 
 			onPressSave: function(oEvent) {
+				var that = this;
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
-				this.confirmOrder(oData, false);
+				MessageBox.confirm("Salvati confirmarea comenzii?",
+					function(bResult) {
+						if (bResult == 'OK') {
+							that.confirmOrder(oData, false);
+						}
+					}
+				);
 			},
 
 			onPressSavePrint: function(oEvent) {
+				var that = this;
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
-				this.confirmOrder(oData, true);
+				MessageBox.confirm("Salvati confirmarea comenzii?",
+					function(bResult) {
+						if (bResult == 'OK') {
+							that.confirmOrder(oData, false);
+						}
+					}
+				);
 			},
 
 			onChangeRepPoint: function(oEvent) {
@@ -493,14 +508,36 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			},
 
 			onPressScann: function(oEvent) {
-				this.onNavBack(oEvent);
+				//	this.onNavBack(oEvent);
 			},
 
 			onError: function(msg) {
 				var msg = 'Error' + msg;
 				MessageToast.show(msg);
 			},
+			
+			onPressCreateLot: function(oEvent) {
+				var oView = this.getView();
+				var oData = oView.getModel().getData();
+				if (oData.Order.HEADER.BATCH != '') {
+					MessageBox.confirm("Generati un lot nou?",
+						function(bResult) {
+							if (bResult == 'OK') {
+								oData.Order.HEADER.BATCH = "LOT_NOU";
+								oView.getModel().setData(oData);
+								oView.getModel().refresh();
+							}
+						}
+					);
+				} else {
+					oData.Order.HEADER.BATCH = "LOT_NOU";
+					oView.getModel().setData(oData);
+					oView.getModel().refresh();
+				}
 
+			},			
+			 
+			
 			handleChangeYeld: function(oEvent) {
 				var newValue = oEvent.getParameter("value");
 
@@ -527,11 +564,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			},
 
 			confirmOrder: function(oData, vPrint) {
+			
 				var self = this;
 				var oView = this.getView(),
 					//currentUser = oView.getModel("currentUser").getData(),
 					oModelControls = oView.getModel("controls");
-
+				oView.setBusy(true);
 				// salvare date in SAP
 				var oConfig = oView.getModel("config").getData();
 				var oDataDetail = oView.getModel("orderdetail").getData();
@@ -543,10 +581,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					oData.Order.HEADER.SCRAPQUANT = oData.Order.HEADER.YELD;
 					oData.Order.HEADER.ISYELD = '';
 				}
-				if (vPrint){
-					oData.Order.HEADER.DOPRINT = 'X';	
+				if (vPrint) {
+					oData.Order.HEADER.DOPRINT = 'X';
 				}
-				oView.setBusy(true);
+				
 				// todo: de pus calea intr-o constanta
 				var url = oConfig.serverSAP + "/sap/bc/zppmobi?detail=confirm";
 				var oUpdateModel = new JSONModel();
@@ -573,7 +611,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 				var currentUser = this.getView().getModel("currentUser").getData();
 
-	 
 				var oParameters = {};
 
 				if (oConfig.notFromFiori) {
@@ -647,7 +684,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				this.BATCH_CLASS = value.BATCH_CLASS;
 				var oCharValModel = new JSONModel(value.VALUES);
 				oOwner.setModel(oCharValModel, "CharValCollection");
-			 
+
 				if (!this._valueHelpDialogCharVal) {
 					this._valueHelpDialogCharVal = sap.ui.xmlfragment(
 						"sap.ui.pp.mobi.view.SHDialogCHARVAL",
@@ -722,10 +759,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				}
 				oEvent.getSource().getBinding("items").filter([]);
 			},
-
-
-
-
 
 			handleValueRequestMatnr: function(oController) {
 				this.inputId = oController.oSource.sId;
