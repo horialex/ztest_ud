@@ -37,7 +37,7 @@
 					<core:Title text="Depozitare" />
 					<Label text="Lot" visible="{orderdetail>/SetLot}"/>
 					<Input fieldGroupIds="2" name="Input_lot" value="{HEADER/BATCH}" visible="{orderdetail>/SetLot}"/>
-					<Button text="Lot no"  visible="{orderdetail>/SetLot}" icon="sap-icon://create" id="btnCreateLot" press="onPressCreateLot" />
+					<Button text="Lot nou"  visible="{orderdetail>/SetLot}" icon="sap-icon://create" id="btnCreateLot" press="onPressCreateLot" />
 					<Label text="Modul formare" visible="{orderdetail>/SetModForm}"/>
 					<Input fieldGroupIds="2" name="Input_mod_formare" value="{HEADER/MOD_FORM}" visible="{orderdetail>/SetModForm}"/>
 					<Label text="Unitate depozitare"/>
@@ -134,7 +134,7 @@
 					<ToggleButton icon="sap-icon://broken-link" enabled="true" pressed="false" press="onPressEditMaterial" visible="false"/>
 				</contentLeft>
 				<contentRight>
-					<Button id="buttonSave" icon="sap-icon://save" press="onPressSave" type="Accept" text="Confirmare"/>
+					<Button id="buttonSave" visible="false" icon="sap-icon://save" press="onPressSave" type="Accept" text="Confirmare"/>
 					<Button id="buttonSavePrint" icon="sap-icon://tags" press="onPressSavePrint" type="Accept" text="Confirmare si Tiparire"/>
 					<!--
 					<Button id="buttonMessages" icon="sap-icon://alert" press="messagePopoverOpen" visible="{StateEnd}" text="{controls>/buttonMessagesText}" type="{controls>/buttonMessagesType}"/>

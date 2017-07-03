@@ -141,6 +141,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					}
 				}
 
+
+				if (oData.Order.HEADER.LHMG1 < 	oData.Order.HEADER.TOTAL_PLORD_QTY) {
+					oData.Order.HEADER.YELD =	oData.Order.HEADER.LHMG1;
+					this.doChangeYeld(oData.Order.HEADER.LHMG1);
+				}
+
 				oView.getModel().setData(oData);
 				oOrderDetailModel.setData(oDataDetail);
 				oView.setModel(oOrderDetailModel, "orderdetail");
@@ -318,11 +324,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			onPressSave: function(oEvent) {
 				var that = this;
 				var oView = this.getView();
-				var oData = oView.getModel().getData();
 				MessageBox.confirm("Salvati confirmarea comenzii?",
 					function(bResult) {
 						if (bResult == 'OK') {
-							that.confirmOrder(oData, false);
+								var oData = oView.getModel().getData();
+							that.doConfirmOrder(oData, false);
 						}
 					}
 				);
@@ -331,11 +337,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			onPressSavePrint: function(oEvent) {
 				var that = this;
 				var oView = this.getView();
-				var oData = oView.getModel().getData();
 				MessageBox.confirm("Salvati confirmarea comenzii?",
 					function(bResult) {
 						if (bResult == 'OK') {
-							that.confirmOrder(oData, false);
+								var oData = oView.getModel().getData();
+							that.doConfirmOrder(oData, true);
 						}
 					}
 				);
@@ -517,33 +523,43 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			},
 			
 			onPressCreateLot: function(oEvent) {
+				var that = this;
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
 				if (oData.Order.HEADER.BATCH != '') {
 					MessageBox.confirm("Generati un lot nou?",
 						function(bResult) {
 							if (bResult == 'OK') {
-								oData.Order.HEADER.BATCH = "LOT_NOU";
+								that.doLotNou(oData);
 								oView.getModel().setData(oData);
-								oView.getModel().refresh();
 							}
 						}
 					);
 				} else {
-					oData.Order.HEADER.BATCH = "LOT_NOU";
+						that.doLotNou(oData);
 					oView.getModel().setData(oData);
-					oView.getModel().refresh();
+					 
 				}
 
 			},			
-			 
+			
+			doLotNou:function(oData){
+				oData.Order.HEADER.BATCH = "LOT_NOU";
+				var char;
+				for (char in oData.Order.CHARS) { 
+					oData.Order.CHARS[char].VALUE = '';	
+				}
+			} ,
 			
 			handleChangeYeld: function(oEvent) {
 				var newValue = oEvent.getParameter("value");
-
+				this.doChangeYeld(newValue);
+				
+			},
+			
+			doChangeYeld: function(newValue){
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
-
 				var rap = newValue / oData.Order.HEADER.TOTAL_PLORD_QTY;
 				var decimals;
 				var comp;
@@ -560,10 +576,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						oData.Order.COMPONENTS[comp].CONF_QUAN = Number(Math.round(qty + 'e' + decimals) + 'e-' + decimals);
 					}
 				}
-				oView.getModel().setData(oData);
+				oView.getModel().setData(oData);				
 			},
 
-			confirmOrder: function(oData, vPrint) {
+
+			doConfirmOrder: function(oData, vPrint) {
 			
 				var self = this;
 				var oView = this.getView(),
@@ -598,11 +615,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 							MessageBox.error("Comanda nu a fost confirmata. Error:" + oDataSAP.ROOT.RETURN.MESSAGE);
 						} else {
 							MessageToast.show("Comanda a fost confirmata.");
-							//todo: de reincarcat lista de comenzi
-
-							self.onNavBack(oEvent);
 						}
-
+						self.onNavBack(oEvent);
 					} else {
 						MessageBox.error("Nu se poate face confirmarea. Eroare de comunicare");
 					}
@@ -752,8 +766,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					var value = this.value;
 					if (valueCharg.QTY < value.CONF_QUAN) {
 						value.CONF_QUAN = valueCharg.QTY;
-						value.split = true;
+						//value.split = true;
+						this.doSplitItem(value);
 					}
+					
 					//	productInput.setBindingContext(oContext);
 
 				}
