@@ -35,8 +35,8 @@ sap.ui.define([
 			//http://hvsrvsap3.rombat.local:8000/sap/bc/ui2/start_up
 			//		var deviceModel = new sap.ui.model.json.JSONModel({
 			oModel = new JSONModel({
-				user: "dhongu",
-				pass: "Milka2017,"
+				user: "",
+				pass: ""
 			});
 			//oModel.setDefaultBindingMode("OneWay");
 			this.setModel(oModel, "currentUser");

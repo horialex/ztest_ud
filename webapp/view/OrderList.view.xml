@@ -2,79 +2,78 @@
 xmlns:u="sap.ui.unified"
 xmlns="sap.m"
 xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core"
- 
-	
-	>
-	<!--
-	<u:Shell id="myShell" icon="{/logo}">
-		<u:headItems>
-			<u:ShellHeadItem tooltip="Configuration" icon="sap-icon://menu2" visible="false" press="handlePressStart"/>
-			<u:ShellHeadItem tooltip="Home" icon="sap-icon://home" visible="true" press="handlePressHome"/>
-		</u:headItems>
-		<u:headEndItems>
-			<u:ShellHeadItem icon="sap-icon://log" tooltip="Logoff" press="handleLogout"/>
-		</u:headEndItems>
-		<u:user>
-			<u:ShellHeadUserItem image="sap-icon://person-placeholder" username="{currentUser>/user}" press="handleAuthentification"/>
-		</u:user>
-		<u:search>
-			<SearchField search="onFilterOrders"/>
-		</u:search>
-	</u:Shell>
-	-->
-	<Page id="pageOrderList" title="Confirmare Productie">
-		<List id="orderList"  width="auto" 
-			items="{ path : '/ROOT/ORDERS', 
-					sorter : { path : 'HEADER/ZZPRIO', group : true  },
-					groupHeaderFactory: '.getGroupHeader'
-					}">
-			<headerToolbar>
-				<Toolbar>
-					<!--
-					<Title text="User: {currentUser>/user}"/>
-					<ToolbarSpacer/>
-					<SearchField width="50%" search="onFilterOrders" selectOnFocus="false"/>
-					-->
-					 
-					<Title text="Linia productie:"/>
-					<Select id="productionLine"  width="40%"  change="onChangeProductionLine" value="{ProductionLine}"
-					showSecondaryValues="true" items="{ path: 'ProductionLineCollection>/ROOT/LINES', sorter: { path: 'ARBPL' } }">
-						<core:ListItem  key="{ProductionLineCollection>ARBPL}" text="{ProductionLineCollection>ARBPL} {ProductionLineCollection>SHORT_TEXT}" 
-						additionalText="{ProductionLineCollection>WERKS} {ProductionLineCollection>ARBPL} {ProductionLineCollection>SET_PROD_LOT}"/>
-					</Select>
-					<Button icon="sap-icon://refresh" press="handleRefresh"/>
-					<!--
-					<PullToRefresh	id="pullToRefresh" refresh="handleRefresh" /> 
-					-->
-					<SearchField width="20%" placeholder="Cauta dupa nr comanda" search="onFilterByOrder"/>
-					<SearchField width="20%"  placeholder="Cauta dupa data" search="onFilterByDate"/>
-      
-		 
-					
-				</Toolbar>
-			</headerToolbar>
-			<items>
-				<ObjectListItem press="onPressOrder" type="Navigation" title="{HEADER/SHORT_TEXT}" number="{HEADER/PLANNEDORDER_NUM}">
-					<attributes>
-						<ObjectAttribute title="Produs" text="{HEADER/MATERIAL}"/>
-						<ObjectAttribute title="Cantitate planificata" text="{HEADER/TOTAL_PLORD_QTY} {path:'HEADER/BASE_UOM', formatter: '.formatter.uom'}"/>
-						<ObjectAttribute title="Data Start" text="{HEADER/ORDER_START_DATE}" />
-						<ObjectAttribute title="Data Final" text="{HEADER/ORDER_FIN_DATE}" />
-						<ObjectAttribute title="Observatie" text="{HEADER/ZZOBS}" />
-					</attributes>
-				</ObjectListItem>
-			</items>
-		</List>
-		<footer>
-			<Bar>
-				<contentLeft>
-					<Button text="{i18n>BtnActions}" icon="sap-icon://menu2" press="handlePressStart"  visible="{config>/notFromFiori}"/>
-				</contentLeft>
-				<contentRight>
-					<Title text="PP Mobi v1"/>
-				</contentRight>
-			</Bar>
-		</footer>
-	</Page>
+  xmlns:core="sap.ui.core"
+
+
+  >
+  <!--
+  <u:Shell id="myShell" icon="{/logo}">
+    <u:headItems>
+      <u:ShellHeadItem tooltip="Configuration" icon="sap-icon://menu2" visible="false" press="handlePressStart"/>
+      <u:ShellHeadItem tooltip="Home" icon="sap-icon://home" visible="true" press="handlePressHome"/>
+    </u:headItems>
+    <u:headEndItems>
+      <u:ShellHeadItem icon="sap-icon://log" tooltip="Logoff" press="handleLogout"/>
+    </u:headEndItems>
+    <u:user>
+      <u:ShellHeadUserItem image="sap-icon://person-placeholder" username="{currentUser>/user}" press="handleAuthentification"/>
+    </u:user>
+    <u:search>
+      <SearchField search="onFilterOrders"/>
+    </u:search>
+  </u:Shell>
+  -->
+  <Page id="pageOrderList" title="Confirmare Productie">
+    <List id="orderList"  width="auto"
+      items="{ path : '/ROOT/ORDERS',
+          sorter : { path : 'HEADER/ZZPRIO', group : true  },
+          groupHeaderFactory: '.getGroupHeader'
+          }">
+      <headerToolbar>
+        <Toolbar>
+          <!--
+          <Title text="User: {currentUser>/user}"/>
+          <ToolbarSpacer/>
+          <SearchField width="50%" search="onFilterOrders" selectOnFocus="false"/>
+          -->
+          
+          <Title text="Linia productie:"/>
+          <Select id="productionLine"  width="40%"  change="onChangeProductionLine" value="{ProductionLine}"
+          showSecondaryValues="true" items="{ path: 'ProductionLineCollection>/ROOT/LINES', sorter: { path: 'ARBPL' } }">
+            <core:ListItem  key="{ProductionLineCollection>ARBPL}" text="{ProductionLineCollection>ARBPL} {ProductionLineCollection>SHORT_TEXT}"
+            additionalText="{ProductionLineCollection>WERKS} {ProductionLineCollection>ARBPL} {ProductionLineCollection>SET_PROD_LOT}"/>
+          </Select>
+          <Button icon="sap-icon://refresh" press="handleRefresh"/>
+          <!--
+          <PullToRefresh  id="pullToRefresh" refresh="handleRefresh" />
+          -->
+          <SearchField width="20%" placeholder="Cauta dupa nr comanda" search="onFilterByOrder"/>
+          <SearchField width="20%"  placeholder="Cauta dupa data" search="onFilterByDate"/>
+
+
+        </Toolbar>
+      </headerToolbar>
+      <items>
+        <ObjectListItem press="onPressOrder" type="Navigation" title="{HEADER/SHORT_TEXT}" number="{HEADER/PLANNEDORDER_NUM}">
+          <attributes>
+            <ObjectAttribute title="Produs" text="{HEADER/MATERIAL}"/>
+            <ObjectAttribute title="Cantitate planificata" text="{HEADER/TOTAL_PLORD_QTY} {path:'HEADER/BASE_UOM', formatter: '.formatter.uom'}"/>
+            <ObjectAttribute title="Data Start" text="{HEADER/ORDER_START_DATE}" />
+            <ObjectAttribute title="Data Final" text="{HEADER/ORDER_FIN_DATE}" />
+            <ObjectAttribute title="Observatie" text="{HEADER/ZZOBS}" />
+          </attributes>
+        </ObjectListItem>
+      </items>
+    </List>
+    <footer>
+      <Bar>
+        <contentLeft>
+          <Button text="{i18n>BtnActions}" icon="sap-icon://menu2" press="handlePressStart"  visible="{config>/notFromFiori}"/>
+        </contentLeft>
+        <contentRight>
+          <Title text="PP Mobi v1.04"/>
+        </contentRight>
+      </Bar>
+    </footer>
+  </Page>
 </mvc:View>

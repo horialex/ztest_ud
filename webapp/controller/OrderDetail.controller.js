@@ -30,7 +30,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			/**
 			 * Called when the worklist controller is instantiated.
-			 * 
+			 *
 			 * @public
 			 */
 			onInit: function() {
@@ -101,7 +101,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				// un shortcut la comanda
 				oData.Order = oData.ROOT.ORDERS[id];
 				oData.MaterialIsEditable = false;
+				oData.ScanMode = false;
 				oDataDetail.Order = oData.ROOT.ORDERS[id];
+				oDataDetail.Order.HEADER.E_DOC = false; // dupa ce fac in sap o sa dezactivez
 
 				var i;
 				for (i in oData.Order.COMPONENTS) {
@@ -141,9 +143,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					}
 				}
 
-
-				if (oData.Order.HEADER.LHMG1 < 	oData.Order.HEADER.TOTAL_PLORD_QTY) {
-					oData.Order.HEADER.YELD =	oData.Order.HEADER.LHMG1;
+				if (oData.Order.HEADER.LHMG1 < oData.Order.HEADER.TOTAL_PLORD_QTY) {
+					oData.Order.HEADER.YELD = oData.Order.HEADER.LHMG1;
 					this.doChangeYeld(oData.Order.HEADER.LHMG1);
 				}
 
@@ -174,7 +175,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					}
 				}
 				if (gasit == false) {
-					MessageBox.error("Lot " + barcode + " scanat nu exista");
+					MessageBox.error("Componenta  " + barcode + " scanata nu exista");
 					return;
 				}
 
@@ -230,7 +231,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			 * Event handler for navigating back. It checks if there is a history
 			 * entry. If yes, history.go(-1) will happen. If not, it will replace
 			 * the current entry of the browser history with the worklist route.
-			 * 
+			 *
 			 * @public
 			 */
 			onNavBack: function(oEvent) {
@@ -247,9 +248,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					//oController = this.getView().getController();
 					//oController.loadOrders();
 					//if (oModelOrder.TestData) {
-					//	oModelOrder.oController.handleLocalDataTest();
+					//  oModelOrder.oController.handleLocalDataTest();
 					//} else {
-					//	oModelOrder.oController.loadOrders({'detail':'line','prod_line':value});
+					//  oModelOrder.oController.loadOrders({'detail':'line','prod_line':value});
 					//}
 				}
 
@@ -303,7 +304,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 				oMessagePopover1.openBy(oEvent.getSource());
 
-				/*	
+				/*
 				this.oMessagePopover = sap.ui.xmlfragment( "sap.ui.pp.mobi.view.SAPResult", this);
 				oView.addDependent(this.oMessagePopove);
 
@@ -324,11 +325,19 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			onPressSave: function(oEvent) {
 				var that = this;
 				var oView = this.getView();
-				MessageBox.confirm("Salvati confirmarea comenzii?",
+				var LotOK = this.doCheckBatch();
+				var mesaj = "Salvati confirmarea comenzii?";
+				if (!LotOK) {
+					mesaj = mesaj + "       ATENTIE! Sunt componente care nu au lotul specificat! ";
+				}
+				oView.setBusy(true);
+				MessageBox.confirm(mesaj,
 					function(bResult) {
 						if (bResult == 'OK') {
-								var oData = oView.getModel().getData();
+							var oData = oView.getModel().getData();
 							that.doConfirmOrder(oData, false);
+						} else {
+							oView.setBusy(false);
 						}
 					}
 				);
@@ -337,13 +346,22 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			onPressSavePrint: function(oEvent) {
 				var that = this;
 				var oView = this.getView();
-				MessageBox.confirm("Salvati confirmarea comenzii?",
+				var LotOK = this.doCheckBatch();
+				var mesaj = "Salvati confirmarea comenzii?";
+				if (!LotOK) {
+					mesaj = mesaj + "       ATENTIE! Sunt componente care nu au lotul specificat! ";
+				}
+				oView.setBusy(true);
+				MessageBox.confirm(mesaj,
 					function(bResult) {
 						if (bResult == 'OK') {
-								var oData = oView.getModel().getData();
+							var oData = oView.getModel().getData();
 							that.doConfirmOrder(oData, true);
+						} else {
+							oView.setBusy(false);
 						}
 					}
+
 				);
 			},
 
@@ -395,7 +413,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var rap = oData.Order.HEADER.YELD / oData.Order.HEADER.TOTAL_PLORD_QTY;
 				var CONF_QUAN = rap * value.REQ_QUAN;
 				oData.Order.ForUpdate = true;
-				if (value.CONF_QUAN > 0 && value.REQ_QUAN > value.CONF_QUAN && CONF_QUAN > 0) {
+				if (value.CONF_QUAN > 0 && CONF_QUAN > value.CONF_QUAN && CONF_QUAN > 0) {
 					// se face o copie
 					value.split = false;
 
@@ -479,7 +497,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				});
 
 				oReplaceItemDialog.setModel(oModel);
-				//  deschid dialog        
+				//  deschid dialog
 				oReplaceItemDialog.open();
 
 			},
@@ -498,7 +516,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				this.doSplitItem(value);
 				oItem.setBindingContext(oContext);
 				oView.getModel().setData(oData);
-				oComponentsList.getModel().refresh(); // asta nu are efect		
+				oComponentsList.getModel().refresh(); // asta nu are efect
 				oComponentsList.setBusy(false);
 			},
 
@@ -514,14 +532,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			},
 
 			onPressScann: function(oEvent) {
-				//	this.onNavBack(oEvent);
+				//  this.onNavBack(oEvent);
+				var oView = this.getView();
+				var oData = oView.getModel().getData();
+				oData.ScanMode = !oData.ScanMode;
+				oView.getModel().setData(oData);
 			},
 
 			onError: function(msg) {
 				var msg = 'Error' + msg;
 				MessageToast.show(msg);
 			},
-			
+
 			onPressCreateLot: function(oEvent) {
 				var that = this;
 				var oView = this.getView();
@@ -536,28 +558,49 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						}
 					);
 				} else {
-						that.doLotNou(oData);
+					that.doLotNou(oData);
 					oView.getModel().setData(oData);
-					 
+
 				}
 
-			},			
-			
-			doLotNou:function(oData){
+			},
+
+			doLotNou: function(oData) {
 				oData.Order.HEADER.BATCH = "LOT_NOU";
 				var char;
-				for (char in oData.Order.CHARS) { 
-					oData.Order.CHARS[char].VALUE = '';	
+				for (char in oData.Order.CHARS) {
+					oData.Order.CHARS[char].VALUE = '';
 				}
-			} ,
-			
+			},
+
 			handleChangeYeld: function(oEvent) {
 				var newValue = oEvent.getParameter("value");
 				this.doChangeYeld(newValue);
-				
+
 			},
-			
-			doChangeYeld: function(newValue){
+
+			onPressClearQty: function(oEvent) {
+				var oView = this.getView();
+				var oData = oView.getModel().getData();
+				oData.Order.HEADER.YELD = '';
+				this.doChangeYeld(0);
+				oView.getModel().setData(oData);
+			},
+
+			doCheckBatch: function() {
+				var oView = this.getView();
+				var oData = oView.getModel().getData();
+				var LotOK = true;
+				for (var comp in oData.Order.COMPONENTS) {
+					// se recalculeaza cantitatea doar la produele la care nu a fost scanat un lot
+					if (oData.Order.COMPONENTS[comp].BATCH === '') {
+						LotOK = false;
+					}
+				}
+				return LotOK;
+			},
+
+			doChangeYeld: function(newValue) {
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
 				var rap = newValue / oData.Order.HEADER.TOTAL_PLORD_QTY;
@@ -576,12 +619,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						oData.Order.COMPONENTS[comp].CONF_QUAN = Number(Math.round(qty + 'e' + decimals) + 'e-' + decimals);
 					}
 				}
-				oView.getModel().setData(oData);				
+				oView.getModel().setData(oData);
 			},
 
-
 			doConfirmOrder: function(oData, vPrint) {
-			
+
 				var self = this;
 				var oView = this.getView(),
 					//currentUser = oView.getModel("currentUser").getData(),
@@ -601,7 +643,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				if (vPrint) {
 					oData.Order.HEADER.DOPRINT = 'X';
 				}
-				
+
 				// todo: de pus calea intr-o constanta
 				var url = oConfig.serverSAP + "/sap/bc/zppmobi?detail=confirm";
 				var oUpdateModel = new JSONModel();
@@ -680,7 +722,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				} else {
 					oDataDetail.txtYeldOrScrap = "rebutata";
 					oDataDetail.IsYeld = false;
-					oDataDetail.Order.HEADER.YELD = 0; //elimin cantitatea planificata          
+					oDataDetail.Order.HEADER.YELD = 0; //elimin cantitatea planificata
 				}
 
 				oView.getModel("orderdetail").setData(oDataDetail);
@@ -759,18 +801,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					var productInput = this.getView().byId(this.inputId);
 					productInput.setValue(oSelectedItem.getTitle());
 
-					//	var oContext = productInput.getBindingContext();
-					//	var value = oContext.getProperty();
+					//  var oContext = productInput.getBindingContext();
+					//  var value = oContext.getProperty();
 
-					//	value.BATCH = oSelectedItem.getTitle();
+					//  value.BATCH = oSelectedItem.getTitle();
 					var value = this.value;
 					if (valueCharg.QTY < value.CONF_QUAN) {
 						value.CONF_QUAN = valueCharg.QTY;
 						//value.split = true;
 						this.doSplitItem(value);
 					}
-					
-					//	productInput.setBindingContext(oContext);
+
+					//  productInput.setBindingContext(oContext);
 
 				}
 				oEvent.getSource().getBinding("items").filter([]);
@@ -787,7 +829,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					);
 					this.getView().addDependent(this._valueHelpDialogMATNR);
 					//var oMaterialsModel = this.getOwnerComponent().getModel("MaterialsCollection");
-					//this._valueHelpDialog.setModel(oMaterialsModel,"MaterialsCollection");			
+					//this._valueHelpDialog.setModel(oMaterialsModel,"MaterialsCollection");
 				}
 
 				// open value help dialog
