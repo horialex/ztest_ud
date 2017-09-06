@@ -52,6 +52,17 @@ sap.ui.define(function() {
 			return sStatus.length % 2 === 0;
 		},
 
+		docIcon:function(doc_type){
+			if (doc_type === 'doc'){
+				return 'sap-icon://doc-attachment';
+			} else if (doc_type  === 'pdf'){
+				return 'sap-icon://pdf-attachment';
+			}
+			else {
+				return 'sap-icon://document';                                                
+			}
+		},
+
 		formatMessageType: function(type) {
 			if (type === 'E') {
 				return 'Error';

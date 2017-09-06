@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	
+	<SelectDialog
+		title="Documente"
+		class="sapUiPopupWithPadding"
+		confirm="handleDocSelect"
+		items="{DocsCollection>/}" >
+		<StandardListItem
+			title="{DocsCollection>DESCR}"
+		
+			icon="{path:'DocsCollection>TECH_TYPE', formatter: '.formatter.docIcon'}"
+			/>
+	</SelectDialog>
+
+ 
+</core:FragmentDefinition>

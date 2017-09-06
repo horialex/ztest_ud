@@ -57,10 +57,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var oOrderDetailModel = new JSONModel({
 					'State': 'init',
 					'txtYeldOrScrap': 'obtinuta',
+					'title':'Confirmare productie comanda',
 					'IsYeld': true,
 					'ForUpdate': false,
 					'SetLot': false,
 					'SetModForm': false,
+					'e_doc':false,
 					'messageSet': [{
 						TYPE: 'I',
 						MESSAGE: 'Momentan nu sunt erori'
@@ -103,7 +105,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oData.MaterialIsEditable = false;
 				oData.ScanMode = false;
 				oDataDetail.Order = oData.ROOT.ORDERS[id];
-				oDataDetail.Order.HEADER.E_DOC = false; // dupa ce fac in sap o sa dezactivez
+			 
+				oData.e_doc = oDataDetail.Order.HEADER.E_DOC == 'X' ;
+				
+				//oDataDetail.Order.HEADER.E_DOC = false; // dupa ce fac in sap o sa dezactivez
 
 				var i;
 				for (i in oData.Order.COMPONENTS) {
@@ -714,15 +719,20 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var oDataDetail = oView.getModel("orderdetail").getData();
 				var state = oEvent.getParameter("state");
 
+				var olabelYeld = oView.byId("labelYeld");
+			
+				
 				//var oBundle = oView.getModel("i18n").getResourceBundle();
-
-				if (state) {
+				oDataDetail.IsYeld = ! oDataDetail.IsYeld;
+				if (oDataDetail.IsYeld) {
 					oDataDetail.txtYeldOrScrap = "obtinuta";
-					oDataDetail.IsYeld = true;
+					oDataDetail.title = 'Confirmare productie';
+					$('#'+olabelYeld.sId).css("color","Green"); 
 				} else {
 					oDataDetail.txtYeldOrScrap = "rebutata";
-					oDataDetail.IsYeld = false;
+				 	oDataDetail.title = 'Confirmare REBUT';
 					oDataDetail.Order.HEADER.YELD = 0; //elimin cantitatea planificata
+					$('#'+olabelYeld.sId).css("color","Red");
 				}
 
 				oView.getModel("orderdetail").setData(oDataDetail);
@@ -751,6 +761,38 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				}
 				// open value help dialog
 				this._valueHelpDialogCharVal.open();
+			},
+
+			handleShowDoc:function(){
+				var oView = this.getView();
+				var oOwner = this.getOwnerComponent();
+				var oDataDetail = oView.getModel("orderdetail").getData();
+				var oDocsModel = new JSONModel(oDataDetail.Order.DOCS);
+				oOwner.setModel(oDocsModel, "DocsCollection");
+				if (!this._valueDialogDocs) {
+					this._valueDialogDocs = sap.ui.xmlfragment(
+						"sap.ui.pp.mobi.view.DialogDocs",
+						this
+					);
+					this.getView().addDependent(this._valueDialogDocs);
+					this._valueDialogDocs.setModel(oDocsModel,"DocsCollection");
+				}
+				this._valueDialogDocs.open();
+			},
+			
+			handleDocSelect:function(oEvent){
+				var oSelectedItem = oEvent.getParameter("selectedItem");
+				var oView = this.getView();
+				var oConfig = oView.getModel("config").getData();
+				if (oSelectedItem) {
+					var aContexts = oEvent.getParameter("selectedContexts");
+					if (aContexts && aContexts.length) {
+						var oContextDoc = aContexts[0];
+						var valueDoc = oContextDoc.getProperty();
+						var url = oConfig.serverSAP + "/sap/bc/zppmobi?detail=doc&doc_id=" + valueDoc.ATTA_ID;
+						window.open(url);
+					}	
+				}
 			},
 
 			handleValueRequestCharg: function(oController) {

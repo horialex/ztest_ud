@@ -1,17 +1,20 @@
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
-  xmlns:t="sap.ui.table" xmlns:core="sap.ui.core" controllerName="sap.ui.pp.mobi.controller.OrderDetail" displayBlock="true">
-  <Page id="pageOrderDetail" showNavButton="true" navButtonPress="onNavBack" title="Confirmare Comanda">
-     	<headerContent>
-			<Button icon="sap-icon://attachment" tooltip="Documente" type="Emphasized" text="Documente" visible="{HEADER/E_DOC}"/>
+	xmlns:t="sap.ui.table" xmlns:core="sap.ui.core" controllerName="sap.ui.pp.mobi.controller.OrderDetail" displayBlock="true">
+	<Page id="pageOrderDetail" showNavButton="true" navButtonPress="onNavBack" title="{orderdetail>/title}">
+	 
+		<headerContent>
+			<Button visible="{orderdetail>/IsYeld}" icon="sap-icon://tags" press="handleChangeSwitch" type="Accept" text="Produs"/>
+			<Button visible="{= !${orderdetail>/IsYeld} }" icon="sap-icon://error" press="handleChangeSwitch" type="Reject" text="Rebut"/>
+			<Button icon="sap-icon://attachment" tooltip="Documente" type="Emphasized" text="Documente" visible="{/e_doc}" press="handleShowDoc"/>
 		</headerContent>
-    <ObjectHeader title="{HEADER/SHORT_TEXT}" number="{HEADER/PLANNEDORDER_NUM}" responsive="true" fullScreenOptimized="true">
-      <attributes>
-        <ObjectAttribute title="Linia de productie" text="{HEADER/PRODUCTION_LINE}"/>
-        <ObjectAttribute title="Produs {ProductionLineCollection>/ROOT/LINES/SET_PROD_LOT}" text="{HEADER/MATERIAL}"/>
-        <ObjectAttribute title="Cantitate planificata" text="{HEADER/TOTAL_PLORD_QTY} {path:'HEADER/BASE_UOM', formatter: '.formatter.uom'}"/>
-      </attributes>
-    </ObjectHeader>
-    <!--
+		<ObjectHeader title="{HEADER/SHORT_TEXT}" number="{HEADER/PLANNEDORDER_NUM}" responsive="true" fullScreenOptimized="true">
+			<attributes>
+				<ObjectAttribute title="Linia de productie" text="{HEADER/PRODUCTION_LINE}"/>
+				<ObjectAttribute title="Produs {ProductionLineCollection>/ROOT/LINES/SET_PROD_LOT}" text="{HEADER/MATERIAL}"/>
+				<ObjectAttribute title="Cantitate planificata" text="{HEADER/TOTAL_PLORD_QTY} {path:'HEADER/BASE_UOM', formatter: '.formatter.uom'}"/>
+			</attributes>
+		</ObjectHeader>
+		<!--
     <Panel class="sapUiResponsiveMargin" width="auto" headerText="Confirmare">
 
       <content>
@@ -21,55 +24,46 @@
 
     </Panel>
     -->
-       <f:SimpleForm id="FieldGroupView" minWidth="1024"
-        maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
-           labelSpanL="4" labelSpanM="4"
-        emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2" >
-        <f:content>
-        
-          <core:Title text="Confirmare" />
-          <Label text="Punct de raportare"/>
-          <ComboBox editable="{/ScanMode}" fieldGroupIds="1" showSecondaryValues="true" items="{ path: 'REPPOINTS', sorter: { path: 'REPPOINT' } }" value="{HEADER/REPPOINT}"
-                  change="onChangeRepPoint">
-                  <core:ListItem key="{REPPOINT}" text="{REPPOINT} {TEXT}" additionalText="{QUANTITY} {path:'UOM' , formatter: '.formatter.uom'}"/>
-          </ComboBox>
-          <Label text="Data inregistrare"/>
-          <DatePicker editable="{/ScanMode}"  value="{HEADER/POSTDATE}" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChangeDate"/>
-          <Label id="labelYeld" text="Cantitate {orderdetail>/txtYeldOrScrap}"/>
-          <Input editable="{/ScanMode}" fieldGroupIds="1" class="sapInputRight sapUiFieldWarningColor"
-          type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
-          <Button width="10%" icon="sap-icon://delete" press="onPressClearQty" />
-        
-									<Switch state="{orderdetail>/IsYeld}" type="AcceptReject" change="handleChangeSwitch">
-										<layoutData>
-											<FlexItemData growFactor="1"/>
-										</layoutData>
-									</Switch>
-								 
-          <Label text="Maistru"/>
-          <ComboBox editable="{/ScanMode}" fieldGroupIds="1"  id="maistru"  value="{HEADER/MAISTRU}"     items="{ path: 'ProductionLineCollection>/ROOT/MAISTRI', sorter: { path: 'NAME' } }">
-          	            <core:ListItem  key="{ProductionLineCollection>NAME}" text="{ProductionLineCollection>NAME}"
-            />
-          </ComboBox>          
-          
-          <core:Title text="Depozitare" />
-          <Label text="Lot" visible="{orderdetail>/SetLot}"/>
-          <Input editable="{/ScanMode}" fieldGroupIds="2" name="Input_lot" value="{HEADER/BATCH}" visible="{orderdetail>/SetLot}"/>
-          <Button text="Lot nou"  visible="{orderdetail>/SetLot}" icon="sap-icon://create" id="btnCreateLot" press="onPressCreateLot" />
-          <Label text="Modul formare" visible="{orderdetail>/SetModForm}"/>
-          <Input editable="{/ScanMode}" fieldGroupIds="2" name="Input_mod_formare" value="{HEADER/MOD_FORM}" visible="{orderdetail>/SetModForm}"/>
-          <Label text="Unitate depozitare"/>
-          <Input editable="{/ScanMode}" fieldGroupIds="2" name="Input_ud" value="{HEADER/NLENR}"/>
-
-          <Label text="Observatie"/>
-          <Input editable="{/ScanMode}" fieldGroupIds="2"  value="{HEADER/ZZOBS}"/>
-
-        </f:content>
-      </f:SimpleForm>
-    <Panel width="auto" expandable="false" expanded="true">
-      <content>
-        <Table inset="false" id="componentsList" items="{ path: 'COMPONENTS', sorter: { path: 'MATL_DESC' } }" busyIndicatorDelay="0">
-          <!--
+		<f:SimpleForm id="FieldGroupView" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4"
+			labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+			<f:content>
+				<core:Title text="Confirmare"/>
+				<Label text="Punct de raportare"/>
+				<ComboBox fieldGroupIds="1" showSecondaryValues="true" items="{ path: 'REPPOINTS', sorter: { path: 'REPPOINT' } }" value="{HEADER/REPPOINT}"
+					change="onChangeRepPoint">
+					<core:ListItem key="{REPPOINT}" text="{REPPOINT} {TEXT}" additionalText="{QUANTITY} {path:'UOM' , formatter: '.formatter.uom'}"/>
+				</ComboBox>
+				<Label text="Data inregistrare"/>
+				<DatePicker value="{HEADER/POSTDATE}" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChangeDate"/>
+				<Label id="labelYeld" text="Cantitate {orderdetail>/txtYeldOrScrap}"/>
+				<Button visible="{orderdetail>/IsYeld}" press="handleChangeSwitch" type="Accept" text="Produs"/>
+				<Button visible="{= !${orderdetail>/IsYeld} }" press="handleChangeSwitch" type="Reject" text="Rebut"/>
+				<Input fieldGroupIds="1" class="sapInputRight" type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
+				<!--
+				<StepInput value="{HEADER/YELD}" displayValuePrecision="1" min="0" width="150px" step="1" change="handleChangeYeld"/>
+				-->
+				<Button width="10%" icon="sap-icon://delete" press="onPressClearQty"/>
+				<Label text="Maistru"/>
+				<ComboBox fieldGroupIds="1" id="maistru" value="{HEADER/MAISTRU}"
+					items="{ path: 'ProductionLineCollection>/ROOT/MAISTRI', sorter: { path: 'NAME' } }">
+					<core:ListItem key="{ProductionLineCollection>NAME}" text="{ProductionLineCollection>NAME}"/>
+				</ComboBox>
+				<core:Title text="Depozitare"/>
+				<Label text="Lot" visible="{orderdetail>/SetLot}"/>
+				<Input editable="{/ScanMode}" fieldGroupIds="2" name="Input_lot" value="{HEADER/BATCH}" visible="{orderdetail>/SetLot}"/>
+				<Button text="Lot nou" visible="{orderdetail>/SetLot}" icon="sap-icon://create" id="btnCreateLot" press="onPressCreateLot"/>
+				<Label text="Modul formare" visible="{orderdetail>/SetModForm}"/>
+				<Input editable="{/ScanMode}" fieldGroupIds="2" name="Input_mod_formare" value="{HEADER/MOD_FORM}" visible="{orderdetail>/SetModForm}"/>
+				<Label text="Unitate depozitare"/>
+				<Input fieldGroupIds="2" name="Input_ud" value="{HEADER/NLENR}"/>
+				<Label text="Observatie"/>
+				<Input editable="{/ScanMode}" fieldGroupIds="2" value="{HEADER/ZZOBS}"/>
+			</f:content>
+		</f:SimpleForm>
+		<Panel width="auto" expandable="false" expanded="true">
+			<content>
+				<Table inset="false" id="componentsList" items="{ path: 'COMPONENTS', sorter: { path: 'MATL_DESC' } }" busyIndicatorDelay="0">
+					<!--
           <headerToolbar>
             <Toolbar>
               <Input id="dummy" value="{dummy}" type="hidden" enabled="false"/>
@@ -78,94 +72,94 @@
             </Toolbar>
           </headerToolbar>
           -->
-          <columns>
-            <Column>
-              <Text text="Material"/>
-            </Column>
-            <Column width="15%" minScreenWidth="Tablet" demandPopin="true">
-              <Text text="Cod Material"/>
-            </Column>
-            <!--
+					<columns>
+						<Column>
+							<Text text="Material"/>
+						</Column>
+						<Column width="15%" minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Cod Material"/>
+						</Column>
+						<!--
             <Column hAlign="Right">
               <Text text="Cantitate Planificata" />
             </Column>
             -->
-            <Column minScreenWidth="Tablet" demandPopin="true">
-              <Text text="Lot"/>
-            </Column>
-            <Column minScreenWidth="Tablet" demandPopin="true">
-              <Text class="sapInputRight" text="Cantitate Utilizata"/>
-            </Column>
-          </columns>
-          <items>
-            <ColumnListItem>
-              <cells>
-                <ObjectIdentifier title="{MATL_DESC} " text="{REQ_QUAN} {path:'BASE_UOM', formatter: '.formatter.uom'}"/>
-                <Input editable="{/MaterialIsEditable}" id="productInputMaterial" value="{MATERIAL}"/>
-                <!--
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Lot"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text class="sapInputRight" text="Cantitate Utilizata"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier title="{MATL_DESC} " text="{REQ_QUAN} {path:'BASE_UOM', formatter: '.formatter.uom'}"/>
+								<Input editable="{/MaterialIsEditable}" id="productInputMaterial" value="{MATERIAL}"/>
+								<!--
                 <ObjectNumber number="{REQ_QUAN}" unit="{BASE_UOM}" />
                 -->
-                <Input id="productInputLot" value="{BATCH}" enabled="true" editable="{/ScanMode}" filterSuggests="false" showValueHelp="true"
-                  maxSuggestionWidth="50%" valueHelpRequest="handleValueRequestCharg"/>
-                 <!--
+								<Input id="productInputLot" value="{BATCH}" enabled="true" filterSuggests="false" showValueHelp="true" maxSuggestionWidth="50%"
+									valueHelpRequest="handleValueRequestCharg"/>
+								<!--
                  <Input value="{CONF_QUAN}" editable="{/ScanMode}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number" class="sapInputRight" 
                  filterSuggests="false" showValueHelp="true" valueHelpRequest="onPressSplitItem"/>
                 -->
-                <HBox>
-                  <Input value="{CONF_QUAN}" editable="{/ScanMode}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number" class="sapInputRight"/>
-                  <Button enabled="{split}" icon="sap-icon://duplicate" id="btnSplitItem" press="onPressSplitItem" type="Emphasized"/>
-                
-                </HBox>
-               
-              </cells>
-            </ColumnListItem>
-          </items>
-        </Table>
-      </content>
-    </Panel>
-    <Panel width="auto" expandable="false" expanded="true">
-      <content>
-        <Table inset="false" id="charsList" items="{ path: 'CHARS'}" busyIndicatorDelay="0">
-          <columns>
-            <Column>
-              <Text text="Caracteristica"/>
-            </Column>
-            <Column>
-              <Text text="Valoare"/>
-            </Column>
-          </columns>
-          <items>
-            <ColumnListItem>
-              <cells>
-                <ObjectIdentifier title="{ATBEZ}"/>
-                <FlexBox>
-                <Input id="productCharVal" fieldGroupIds="Value" value="{VALUE}" enabled="true" editable="{/ScanMode}" filterSuggests="false" showValueHelp="true"
-                    type="{path:'ATFOR', formatter: '.formatter.type_input'}"  visible="{= ${ATFOR} !== 'DATE' }"
-                      maxSuggestionWidth="50%" valueHelpRequest="handleValueRequestCharVal"/>
-                <DatePicker fieldGroupIds="Value" value="{VALUE}" valueFormat="yyyy-MM-dd" displayFormat="long" visible="{= ${ATFOR} === 'DATE' }" editable="{/ScanMode}"  />
-                </FlexBox>
-              </cells>
-            </ColumnListItem>
-          </items>
-        </Table>
-      </content>
-    </Panel>
-
-    <footer>
-      <Bar>
-        <contentLeft>
-          <Button id="buttonScann" icon="sap-icon://bar-code" text="Mod Scanare" press="onPressScann"/>
-          <ToggleButton icon="sap-icon://broken-link" enabled="true" pressed="false" press="onPressEditMaterial" visible="false"/>
-        </contentLeft>
-        <contentRight>
-          <Button id="buttonSave" visible="false" icon="sap-icon://save" press="onPressSave" type="Accept" text="Confirmare"/>
-          <Button id="buttonSavePrint" visible="{orderdetail>/IsYeld}" icon="sap-icon://tags" press="onPressSavePrint" type="Accept" text="Confirmare si Tiparire"/>
-          <Button id="buttonSaveRebutPrint" visible="{= !${orderdetail>/IsYeld} }" icon="sap-icon://error" press="onPressSavePrint" type="Reject" text="Confirmare Rebut si Tiparire"/>
-          <!--
+								<HBox>
+									<Input value="{CONF_QUAN}" editable="{/ScanMode}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number"
+										class="sapInputRight"/>
+									<Button enabled="{split}" icon="sap-icon://duplicate" id="btnSplitItem" press="onPressSplitItem" type="Emphasized"/>
+								</HBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</content>
+		</Panel>
+		<Panel width="auto" expandable="false" expanded="true">
+			<content>
+				<Table inset="false" id="charsList" items="{ path: 'CHARS'}" busyIndicatorDelay="0">
+					<columns>
+						<Column>
+							<Text text="Caracteristica"/>
+						</Column>
+						<Column>
+							<Text text="Valoare"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier title="{ATBEZ}"/>
+								<FlexBox>
+									<Input id="productCharVal" fieldGroupIds="Value" value="{VALUE}" enabled="true" filterSuggests="false" showValueHelp="true"
+										type="{path:'ATFOR', formatter: '.formatter.type_input'}" visible="{= ${ATFOR} !== 'DATE' }" maxSuggestionWidth="50%"
+										valueHelpRequest="handleValueRequestCharVal"/>
+									<DatePicker fieldGroupIds="Value" value="{VALUE}" valueFormat="yyyy-MM-dd" displayFormat="long" visible="{= ${ATFOR} === 'DATE' }"/>
+								</FlexBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</content>
+		</Panel>
+		<footer>
+			<Bar>
+				<contentLeft>
+					<Button id="buttonScann" icon="sap-icon://bar-code" text="Mod Scanare" press="onPressScann"/>
+					<ToggleButton icon="sap-icon://broken-link" enabled="true" pressed="false" press="onPressEditMaterial" visible="false"/>
+				</contentLeft>
+				<contentRight>
+					<Button id="buttonSave" visible="false" icon="sap-icon://save" press="onPressSave" type="Accept" text="Confirmare"/>
+					<Button id="buttonSavePrint" visible="{orderdetail>/IsYeld}" icon="sap-icon://tags" press="onPressSavePrint" type="Accept"
+						text="Confirmare si Tiparire"/>
+					<Button id="buttonSaveRebutPrint" visible="{= !${orderdetail>/IsYeld} }" icon="sap-icon://error" press="onPressSavePrint" type="Reject"
+						text="Confirmare Rebut si Tiparire"/>
+					<!--
           <Button id="buttonMessages" icon="sap-icon://alert" press="messagePopoverOpen" visible="{StateEnd}" text="{controls>/buttonMessagesText}" type="{controls>/buttonMessagesType}"/>
           -->
-        </contentRight>
-      </Bar>
-    </footer>
-  </Page>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
 </mvc:View>

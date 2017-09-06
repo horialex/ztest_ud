@@ -71,7 +71,7 @@ xmlns:mvc="sap.ui.core.mvc"
           <Button text="{i18n>BtnActions}" icon="sap-icon://menu2" press="handlePressStart"  visible="{config>/notFromFiori}"/>
         </contentLeft>
         <contentRight>
-          <Title text="PP Mobi v1.04"/>
+          <Title text="PP Mobi v1.05"/>
         </contentRight>
       </Bar>
     </footer>
