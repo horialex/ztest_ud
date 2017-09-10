@@ -12,7 +12,21 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
 	font-weight: bold;
 }
 */
+.sapPageOrderDetail{
+	zoom : 110%;
+}
+
 
 .sapInputRight input {
 	text-align: right;
+	font-size: larger;
+}
+
+.sapScrap {
+	    background-color: mistyrose;
+}
+
+
+.sapRed {
+	color: red;
 }

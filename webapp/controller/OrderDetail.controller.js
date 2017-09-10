@@ -57,12 +57,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var oOrderDetailModel = new JSONModel({
 					'State': 'init',
 					'txtYeldOrScrap': 'obtinuta',
-					'title':'Confirmare productie comanda',
+					
 					'IsYeld': true,
+
 					'ForUpdate': false,
 					'SetLot': false,
 					'SetModForm': false,
-					'e_doc':false,
+					'e_doc': false,
 					'messageSet': [{
 						TYPE: 'I',
 						MESSAGE: 'Momentan nu sunt erori'
@@ -104,10 +105,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oData.Order = oData.ROOT.ORDERS[id];
 				oData.MaterialIsEditable = false;
 				oData.ScanMode = false;
+				oData.compEdit = false;
+				oData.rebutComp = false;
+				oData.title = 'Confirmare productie comanda';
+
+
 				oDataDetail.Order = oData.ROOT.ORDERS[id];
-			 
-				oData.e_doc = oDataDetail.Order.HEADER.E_DOC == 'X' ;
+				oDataDetail.IsYeld = true;
+				self.doSetColor(oDataDetail.IsYeld);
 				
+				
+				oData.e_doc = oDataDetail.Order.HEADER.E_DOC == 'X';
+
 				//oDataDetail.Order.HEADER.E_DOC = false; // dupa ce fac in sap o sa dezactivez
 
 				var i;
@@ -541,6 +550,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
 				oData.ScanMode = !oData.ScanMode;
+				oData.compEdit = oData.ScanMode;
 				oView.getModel().setData(oData);
 			},
 
@@ -598,7 +608,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var LotOK = true;
 				for (var comp in oData.Order.COMPONENTS) {
 					// se recalculeaza cantitatea doar la produele la care nu a fost scanat un lot
-					if (oData.Order.COMPONENTS[comp].BATCH === '') {
+					if (oData.Order.COMPONENTS[comp].BATCH === '' && oData.Order.COMPONENTS[comp].CONF_QUAN > 0 ) {
 						LotOK = false;
 					}
 				}
@@ -712,31 +722,83 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oItem.setBindingContext(oContext);
 			},
 
-			handleChangeSwitch: function(oEvent) {
+			handleRebutComop: function(oEvent) {
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
 
 				var oDataDetail = oView.getModel("orderdetail").getData();
-				var state = oEvent.getParameter("state");
 
-				var olabelYeld = oView.byId("labelYeld");
-			
-				
-				//var oBundle = oView.getModel("i18n").getResourceBundle();
-				oDataDetail.IsYeld = ! oDataDetail.IsYeld;
-				if (oDataDetail.IsYeld) {
-					oDataDetail.txtYeldOrScrap = "obtinuta";
-					oDataDetail.title = 'Confirmare productie';
-					$('#'+olabelYeld.sId).css("color","Green"); 
+				oData.rebutComp = !oData.rebutComp;
+				if (oData.rebutComp) {
+					oDataDetail.Order.HEADER.YELD = 0; //elimin cantitatea planificata	
+					this.doChangeYeld(0);
+					oData.compEdit = true;
+
 				} else {
-					oDataDetail.txtYeldOrScrap = "rebutata";
-				 	oDataDetail.title = 'Confirmare REBUT';
-					oDataDetail.Order.HEADER.YELD = 0; //elimin cantitatea planificata
-					$('#'+olabelYeld.sId).css("color","Red");
+					oData.compEdit = false;
+
 				}
 
 				oView.getModel("orderdetail").setData(oDataDetail);
 				oView.getModel().setData(oData);
+			},
+
+			handleChangeSwitch: function(oEvent) {
+				var oView = this.getView();
+				var oData = oView.getModel().getData();
+				
+				var oDataDetail = oView.getModel("orderdetail").getData();
+				var state = oEvent.getParameter("state");
+				
+				var self = this;
+				
+				if (oDataDetail.IsYeld) {
+					MessageBox.confirm('Treceti in modul de confirmare REBUT?',
+						function(bResult) {
+							if (bResult == 'OK') {
+								oDataDetail.IsYeld = false;
+								oDataDetail.txtYeldOrScrap = "rebutata";
+								oData.title = 'Confirmare R E B U T';
+								oDataDetail.Order.HEADER.YELD = 0; //elimin cantitatea planificata
+								self.doChangeYeld(0);
+								oDataDetail.compEdit = false;
+								self.doSetColor(oDataDetail.IsYeld);
+								oView.getModel("orderdetail").setData(oDataDetail);
+								oView.getModel().setData(oData);
+							}
+						}
+					);
+				} else {
+					oDataDetail.IsYeld = true;
+					oDataDetail.txtYeldOrScrap = "obtinuta";
+					oData.title = 'Confirmare productie';
+					self.doSetColor(oDataDetail.IsYeld);
+					oView.getModel("orderdetail").setData(oDataDetail);
+					oView.getModel().setData(oData);
+				}
+
+				//var oBundle = oView.getModel("i18n").getResourceBundle();
+
+			},
+
+			doSetColor: function(IsYeld){
+				var oView = this.getView();
+				var oPageOrderDetail = oView.byId("pageOrderDetail");
+				var olabelYeld = oView.byId("labelYeld");
+				var oFieldGroupView = oView.byId("FieldGroupView");
+				if (IsYeld){
+					//$('#' + olabelYeld.sId).css("color", "Green");
+					$('#' + oFieldGroupView.sId).removeClass("sapScrap");
+					//$('#__component0---orderdetail--pageOrderDetail-title-inner').css("color", "Green");	
+					$('#__component0---orderdetail--pageOrderDetail-title-inner').removeClass("sapRed");
+				}
+				else {
+					//$('#' + olabelYeld.sId).css("color", "Red");
+					$('#' + oFieldGroupView.sId).addClass("sapScrap");
+					//$('#__component0---orderdetail--pageOrderDetail-title-inner').css("color", "Red");
+					$('#__component0---orderdetail--pageOrderDetail-title-inner').addClass("sapRed");
+					
+				}
 			},
 
 			handleValueRequestCharVal: function(oController) {
@@ -763,7 +825,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				this._valueHelpDialogCharVal.open();
 			},
 
-			handleShowDoc:function(){
+			handleShowDoc: function() {
 				var oView = this.getView();
 				var oOwner = this.getOwnerComponent();
 				var oDataDetail = oView.getModel("orderdetail").getData();
@@ -775,12 +837,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						this
 					);
 					this.getView().addDependent(this._valueDialogDocs);
-					this._valueDialogDocs.setModel(oDocsModel,"DocsCollection");
+					this._valueDialogDocs.setModel(oDocsModel, "DocsCollection");
 				}
 				this._valueDialogDocs.open();
 			},
-			
-			handleDocSelect:function(oEvent){
+
+			handleDocSelect: function(oEvent) {
 				var oSelectedItem = oEvent.getParameter("selectedItem");
 				var oView = this.getView();
 				var oConfig = oView.getModel("config").getData();
@@ -791,7 +853,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						var valueDoc = oContextDoc.getProperty();
 						var url = oConfig.serverSAP + "/sap/bc/zppmobi?detail=doc&doc_id=" + valueDoc.ATTA_ID;
 						window.open(url);
-					}	
+					}
 				}
 			},
 

@@ -23,7 +23,7 @@ xmlns:mvc="sap.ui.core.mvc"
     </u:search>
   </u:Shell>
   -->
-  <Page id="pageOrderList" title="Confirmare Productie">
+  <Page id="pageOrderList" title="{i18n>MainTitlePage}">
     <List id="orderList"  width="auto"
       items="{ path : '/ROOT/ORDERS',
           sorter : { path : 'HEADER/ZZPRIO', group : true  },
@@ -37,7 +37,7 @@ xmlns:mvc="sap.ui.core.mvc"
           <SearchField width="50%" search="onFilterOrders" selectOnFocus="false"/>
           -->
           
-          <Title text="Linia productie:"/>
+          <Label text="{i18n>LabelLinieProductie}"/>
           <Select id="productionLine"  width="40%"  change="onChangeProductionLine" value="{ProductionLine}"
           showSecondaryValues="true" items="{ path: 'ProductionLineCollection>/ROOT/LINES', sorter: { path: 'ARBPL' } }">
             <core:ListItem  key="{ProductionLineCollection>ARBPL}" text="{ProductionLineCollection>ARBPL} {ProductionLineCollection>SHORT_TEXT}"
@@ -47,8 +47,8 @@ xmlns:mvc="sap.ui.core.mvc"
           <!--
           <PullToRefresh  id="pullToRefresh" refresh="handleRefresh" />
           -->
-          <SearchField width="20%" placeholder="Cauta dupa nr comanda" search="onFilterByOrder"/>
-          <SearchField width="20%"  placeholder="Cauta dupa data" search="onFilterByDate"/>
+          <SearchField width="20%" placeholder="{i18n>SearchNrComanda}" search="onFilterByOrder"/>
+          <SearchField width="20%"  placeholder="{i18n>SearchDate}" search="onFilterByDate"/>
 
 
         </Toolbar>
@@ -71,7 +71,7 @@ xmlns:mvc="sap.ui.core.mvc"
           <Button text="{i18n>BtnActions}" icon="sap-icon://menu2" press="handlePressStart"  visible="{config>/notFromFiori}"/>
         </contentLeft>
         <contentRight>
-          <Title text="PP Mobi v1.05"/>
+          <Title text="{i18n>appTitle}"/>
         </contentRight>
       </Bar>
     </footer>

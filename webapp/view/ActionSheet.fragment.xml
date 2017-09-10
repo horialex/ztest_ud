@@ -12,7 +12,7 @@
       <Button text="Incarcare date locale" icon="sap-icon://forward" press="handleLocalData" />
       -->
       
-      <Button text="Incarcare date de Test" icon="sap-icon://forward" press="handleLocalDataTest" visible="{config>/testMode}" />
+      <Button text="{i18n>LoadTestData}" icon="sap-icon://forward" press="handleLocalDataTest" visible="{config>/testMode}" />
       
       <Button text="Autentificare" icon="sap-icon://employee" press="handleAuthentification" visible="{config>/btnAuthen}"/>
       <Button text="Configurare" icon="sap-icon://settings" press="handlePressConfiguration" visible="{config>/btnAuthen}"/>

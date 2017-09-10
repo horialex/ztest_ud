@@ -1,10 +1,10 @@
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
 	xmlns:t="sap.ui.table" xmlns:core="sap.ui.core" controllerName="sap.ui.pp.mobi.controller.OrderDetail" displayBlock="true">
-	<Page id="pageOrderDetail" showNavButton="true" navButtonPress="onNavBack" title="{orderdetail>/title}">
+	<Page id="pageOrderDetail" class="sapPageOrderDetail" showNavButton="true" navButtonPress="onNavBack" title="{/title}">
 	 
 		<headerContent>
-			<Button visible="{orderdetail>/IsYeld}" icon="sap-icon://tags" press="handleChangeSwitch" type="Accept" text="Produs"/>
-			<Button visible="{= !${orderdetail>/IsYeld} }" icon="sap-icon://error" press="handleChangeSwitch" type="Reject" text="Rebut"/>
+			<Button visible="{= ${orderdetail>/IsYeld} }" icon="sap-icon://tags" press="handleChangeSwitch" type="Accept" text="Produs/Rebut"/>
+			<Button visible="{= !${orderdetail>/IsYeld} }" icon="sap-icon://error" press="handleChangeSwitch" type="Reject"  text="R E B U T / Produs"/>
 			<Button icon="sap-icon://attachment" tooltip="Documente" type="Emphasized" text="Documente" visible="{/e_doc}" press="handleShowDoc"/>
 		</headerContent>
 		<ObjectHeader title="{HEADER/SHORT_TEXT}" number="{HEADER/PLANNEDORDER_NUM}" responsive="true" fullScreenOptimized="true">
@@ -28,7 +28,7 @@
 			labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
 			<f:content>
 				<core:Title text="Confirmare"/>
-				<Label text="Punct de raportare"/>
+				<Label text="Masina"/>
 				<ComboBox fieldGroupIds="1" showSecondaryValues="true" items="{ path: 'REPPOINTS', sorter: { path: 'REPPOINT' } }" value="{HEADER/REPPOINT}"
 					change="onChangeRepPoint">
 					<core:ListItem key="{REPPOINT}" text="{REPPOINT} {TEXT}" additionalText="{QUANTITY} {path:'UOM' , formatter: '.formatter.uom'}"/>
@@ -36,9 +36,9 @@
 				<Label text="Data inregistrare"/>
 				<DatePicker value="{HEADER/POSTDATE}" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChangeDate"/>
 				<Label id="labelYeld" text="Cantitate {orderdetail>/txtYeldOrScrap}"/>
-				<Button visible="{orderdetail>/IsYeld}" press="handleChangeSwitch" type="Accept" text="Produs"/>
-				<Button visible="{= !${orderdetail>/IsYeld} }" press="handleChangeSwitch" type="Reject" text="Rebut"/>
-				<Input fieldGroupIds="1" class="sapInputRight" type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
+
+
+				<Input editable="{= !${/rebutComp} }" fieldGroupIds="1" class="sapInputRight" type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
 				<!--
 				<StepInput value="{HEADER/YELD}" displayValuePrecision="1" min="0" width="150px" step="1" change="handleChangeYeld"/>
 				-->
@@ -63,15 +63,20 @@
 		<Panel width="auto" expandable="false" expanded="true">
 			<content>
 				<Table inset="false" id="componentsList" items="{ path: 'COMPONENTS', sorter: { path: 'MATL_DESC' } }" busyIndicatorDelay="0">
-					<!--
+				 
           <headerToolbar>
             <Toolbar>
+            	<!--
               <Input id="dummy" value="{dummy}" type="hidden" enabled="false"/>
-              <ToolbarSpacer/>
+             
+              
               <Button icon="sap-icon://add" id="btnAddItem" press="handleAddItem" text="Pozitie noua"/>
+              --> <ToolbarSpacer/>
+              	<Button  visible="{= !${orderdetail>/IsYeld} &amp;&amp; !${/rebutComp} }" icon="sap-icon://quality-issue" press="handleRebutComop" type="Emphasized" text="Rebut COMPON"/>
+              	<Button visible="{/rebutComp}" icon="sap-icon://product" press="handleRebutComop" type="Emphasized" text="Rebut Ansamblu"/>
             </Toolbar>
           </headerToolbar>
-          -->
+           
 					<columns>
 						<Column>
 							<Text text="Material"/>
@@ -102,11 +107,11 @@
 								<Input id="productInputLot" value="{BATCH}" enabled="true" filterSuggests="false" showValueHelp="true" maxSuggestionWidth="50%"
 									valueHelpRequest="handleValueRequestCharg"/>
 								<!--
-                 <Input value="{CONF_QUAN}" editable="{/ScanMode}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number" class="sapInputRight" 
+                 <Input value="{CONF_QUAN}" editable="{/compEdit}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number" class="sapInputRight" 
                  filterSuggests="false" showValueHelp="true" valueHelpRequest="onPressSplitItem"/>
                 -->
 								<HBox>
-									<Input value="{CONF_QUAN}" editable="{/ScanMode}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number"
+									<Input value="{CONF_QUAN}" editable="{/compEdit}" valueLiveUpdate="True" liveChange="handleChangeConfQty" type="Number"
 										class="sapInputRight"/>
 									<Button enabled="{split}" icon="sap-icon://duplicate" id="btnSplitItem" press="onPressSplitItem" type="Emphasized"/>
 								</HBox>
