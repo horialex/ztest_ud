@@ -26,6 +26,15 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
 	    background-color: mistyrose;
 }
 
+.sapScrapComp {
+	    background-color: antiquewhite;
+}
+
+
+.sapConf{
+	background-color: aquamarine;
+}
+
 
 .sapRed {
 	color: red;

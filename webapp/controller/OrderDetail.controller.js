@@ -154,6 +154,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						} else {
 							oDataDetail.SetModForm = false;
 						}
+						oDataDetail.super_user = oDataLines.ROOT.LINES[i].SUPER_USER;
 					}
 				}
 
@@ -361,6 +362,28 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var that = this;
 				var oView = this.getView();
 				var LotOK = this.doCheckBatch();
+				var oData = oView.getModel().getData();
+				
+				
+				
+				
+				
+				if (!LotOK) {
+					var oOrderDetailModel = oView.getModel("orderdetail");
+					var oDataDetail = oOrderDetailModel.getData();
+				
+					var userID = '';
+					if (sap.ushell){
+						userID = sap.ushell.Container.getService("UserInfo").getId();	
+					}
+					if (userID!=oDataDetail.super_user){
+						
+						return MessageBox.error("Sunt componente care nu au lotul specificat!");
+					}
+				}	
+			 
+ 
+				
 				var mesaj = "Salvati confirmarea comenzii?";
 				if (!LotOK) {
 					mesaj = mesaj + "       ATENTIE! Sunt componente care nu au lotul specificat! ";
@@ -738,7 +761,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					oData.compEdit = false;
 
 				}
-
+				this.doSetColor(false, oData.compEdit  );
 				oView.getModel("orderdetail").setData(oDataDetail);
 				oView.getModel().setData(oData);
 			},
@@ -781,7 +804,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			},
 
-			doSetColor: function(IsYeld){
+			doSetColor: function(IsYeld, EditCom){
+				EditCom = EditCom || false;
 				var oView = this.getView();
 				var oPageOrderDetail = oView.byId("pageOrderDetail");
 				var olabelYeld = oView.byId("labelYeld");
@@ -789,12 +813,23 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				if (IsYeld){
 					//$('#' + olabelYeld.sId).css("color", "Green");
 					$('#' + oFieldGroupView.sId).removeClass("sapScrap");
+					$('#' + oFieldGroupView.sId).removeClass("sapScrapComp");
+					$('#' + oFieldGroupView.sId).addClass("sapConf");
 					//$('#__component0---orderdetail--pageOrderDetail-title-inner').css("color", "Green");	
 					$('#__component0---orderdetail--pageOrderDetail-title-inner').removeClass("sapRed");
 				}
 				else {
 					//$('#' + olabelYeld.sId).css("color", "Red");
-					$('#' + oFieldGroupView.sId).addClass("sapScrap");
+					$('#' + oFieldGroupView.sId).removeClass("sapConf");
+					if (EditCom) {
+						$('#' + oFieldGroupView.sId).addClass("sapScrapComp");	
+						$('#' + oFieldGroupView.sId).removeClass("sapScrap");
+					}
+					else {
+						$('#' + oFieldGroupView.sId).addClass("sapScrap");	
+						$('#' + oFieldGroupView.sId).removeClass("sapScrapComp");
+					}
+					
 					//$('#__component0---orderdetail--pageOrderDetail-title-inner').css("color", "Red");
 					$('#__component0---orderdetail--pageOrderDetail-title-inner').addClass("sapRed");
 					

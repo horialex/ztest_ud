@@ -21,7 +21,8 @@
 			"SHORT_TEXT": "Ierarhie linie montaj 1 cap.1",
 			"BARCODE": "LM_11",
 			"SET_PROD_LOT": "X",
-			"SET_MOD_FORM":"X"
+			"SET_MOD_FORM":"X",
+			"SUPER_USER":"DHONGU"
 		}, {
 			"WERKS": "2010",
 			"ARBPL": "LM_12",

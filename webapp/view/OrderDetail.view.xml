@@ -25,7 +25,7 @@
     </Panel>
     -->
 		<f:SimpleForm id="FieldGroupView" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4"
-			labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+			labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2" class="sapConf">
 			<f:content>
 				<core:Title text="Confirmare"/>
 				<Label text="Masina"/>
