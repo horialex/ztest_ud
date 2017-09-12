@@ -72,8 +72,8 @@
               
               <Button icon="sap-icon://add" id="btnAddItem" press="handleAddItem" text="Pozitie noua"/>
               --> <ToolbarSpacer/>
-              	<Button  visible="{= !${orderdetail>/IsYeld} &amp;&amp; !${/rebutComp} }" icon="sap-icon://quality-issue" press="handleRebutComop" type="Emphasized" text="Rebut COMPON"/>
-              	<Button visible="{/rebutComp}" icon="sap-icon://product" press="handleRebutComop" type="Emphasized" text="Rebut Ansamblu"/>
+              	<Button visible="{= !${orderdetail>/IsYeld} &amp;&amp; !${/rebutComp} }" icon="sap-icon://quality-issue" press="handleRebutComop" type="Emphasized" text="Rebut COMPON"/>
+              	<Button visible="{= !${orderdetail>/IsYeld} &amp;&amp; ${/rebutComp} }" icon="sap-icon://product" press="handleRebutComop" type="Emphasized" text="Rebut Ansamblu"/>
             </Toolbar>
           </headerToolbar>
            
@@ -151,7 +151,7 @@
 		<footer>
 			<Bar>
 				<contentLeft>
-					<Button id="buttonScann" icon="sap-icon://bar-code" text="Mod Scanare" press="onPressScann"/>
+					<ToggleButton pressed="true" id="buttonScann" icon="sap-icon://bar-code" text="Mod Scanare" />
 					<ToggleButton icon="sap-icon://broken-link" enabled="true" pressed="false" press="onPressEditMaterial" visible="false"/>
 				</contentLeft>
 				<contentRight>

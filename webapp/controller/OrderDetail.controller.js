@@ -57,9 +57,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var oOrderDetailModel = new JSONModel({
 					'State': 'init',
 					'txtYeldOrScrap': 'obtinuta',
-					
 					'IsYeld': true,
-
 					'ForUpdate': false,
 					'SetLot': false,
 					'SetModForm': false,
@@ -109,12 +107,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oData.rebutComp = false;
 				oData.title = 'Confirmare productie comanda';
 
-
 				oDataDetail.Order = oData.ROOT.ORDERS[id];
 				oDataDetail.IsYeld = true;
 				self.doSetColor(oDataDetail.IsYeld);
-				
-				
+
 				oData.e_doc = oDataDetail.Order.HEADER.E_DOC == 'X';
 
 				//oDataDetail.Order.HEADER.E_DOC = false; // dupa ce fac in sap o sa dezactivez
@@ -338,52 +334,36 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			},
 
 			onPressSave: function(oEvent) {
-				var that = this;
-				var oView = this.getView();
-				var LotOK = this.doCheckBatch();
-				var mesaj = "Salvati confirmarea comenzii?";
-				if (!LotOK) {
-					mesaj = mesaj + "       ATENTIE! Sunt componente care nu au lotul specificat! ";
-				}
-				oView.setBusy(true);
-				MessageBox.confirm(mesaj,
-					function(bResult) {
-						if (bResult == 'OK') {
-							var oData = oView.getModel().getData();
-							that.doConfirmOrder(oData, false);
-						} else {
-							oView.setBusy(false);
-						}
-					}
-				);
+				this.doSave(false);
 			},
 
 			onPressSavePrint: function(oEvent) {
+				this.doSave(true);
+			},
+
+			doSave: function(oPrint){
 				var that = this;
 				var oView = this.getView();
 				var LotOK = this.doCheckBatch();
 				var oData = oView.getModel().getData();
+				var oOrderDetailModel = oView.getModel("orderdetail");
+				var oDataDetail = oOrderDetailModel.getData();
 				
 				
-				
-				
-				
+				if (oDataDetail.IsYeld && ( oData.Order.HEADER.YELD == 0 || oData.Order.HEADER.YELD == '') )	{
+						return MessageBox.error("Va rog sa introduceti cantitatea produsa!");	
+				}
 				if (!LotOK) {
-					var oOrderDetailModel = oView.getModel("orderdetail");
-					var oDataDetail = oOrderDetailModel.getData();
-				
 					var userID = '';
-					if (sap.ushell){
-						userID = sap.ushell.Container.getService("UserInfo").getId();	
+					if (sap.ushell) {
+						userID = sap.ushell.Container.getService("UserInfo").getId();
 					}
-					if (userID!=oDataDetail.super_user){
-						
+					if (userID != oDataDetail.super_user) {
+
 						return MessageBox.error("Sunt componente care nu au lotul specificat!");
 					}
-				}	
-			 
- 
-				
+				}
+
 				var mesaj = "Salvati confirmarea comenzii?";
 				if (!LotOK) {
 					mesaj = mesaj + "       ATENTIE! Sunt componente care nu au lotul specificat! ";
@@ -393,13 +373,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					function(bResult) {
 						if (bResult == 'OK') {
 							var oData = oView.getModel().getData();
-							that.doConfirmOrder(oData, true);
+							that.doConfirmOrder(oData, oPrint);
 						} else {
 							oView.setBusy(false);
 						}
 					}
 
-				);
+				);				
 			},
 
 			onChangeRepPoint: function(oEvent) {
@@ -631,7 +611,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var LotOK = true;
 				for (var comp in oData.Order.COMPONENTS) {
 					// se recalculeaza cantitatea doar la produele la care nu a fost scanat un lot
-					if (oData.Order.COMPONENTS[comp].BATCH === '' && oData.Order.COMPONENTS[comp].CONF_QUAN > 0 ) {
+					if (oData.Order.COMPONENTS[comp].BATCH === '' && oData.Order.COMPONENTS[comp].CONF_QUAN > 0) {
 						LotOK = false;
 					}
 				}
@@ -761,7 +741,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					oData.compEdit = false;
 
 				}
-				this.doSetColor(false, oData.compEdit  );
+				this.doSetColor(false, oData.compEdit);
 				oView.getModel("orderdetail").setData(oDataDetail);
 				oView.getModel().setData(oData);
 			},
@@ -769,12 +749,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			handleChangeSwitch: function(oEvent) {
 				var oView = this.getView();
 				var oData = oView.getModel().getData();
-				
+
 				var oDataDetail = oView.getModel("orderdetail").getData();
 				var state = oEvent.getParameter("state");
-				
+
 				var self = this;
-				
+
 				if (oDataDetail.IsYeld) {
 					MessageBox.confirm('Treceti in modul de confirmare REBUT?',
 						function(bResult) {
@@ -793,46 +773,47 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					);
 				} else {
 					oDataDetail.IsYeld = true;
+					oData.Order.HEADER.YELD = oData.Order.HEADER.TOTAL_PLORD_QTY;
+					oDataDetail.rebutComp = 'false';                         
 					oDataDetail.txtYeldOrScrap = "obtinuta";
 					oData.title = 'Confirmare productie';
 					self.doSetColor(oDataDetail.IsYeld);
 					oView.getModel("orderdetail").setData(oDataDetail);
 					oView.getModel().setData(oData);
+					self.doChangeYeld(oData.Order.HEADER.YELD);
 				}
 
 				//var oBundle = oView.getModel("i18n").getResourceBundle();
 
 			},
 
-			doSetColor: function(IsYeld, EditCom){
+			doSetColor: function(IsYeld, EditCom) {
 				EditCom = EditCom || false;
 				var oView = this.getView();
 				var oPageOrderDetail = oView.byId("pageOrderDetail");
 				var olabelYeld = oView.byId("labelYeld");
 				var oFieldGroupView = oView.byId("FieldGroupView");
-				if (IsYeld){
+				if (IsYeld) {
 					//$('#' + olabelYeld.sId).css("color", "Green");
 					$('#' + oFieldGroupView.sId).removeClass("sapScrap");
 					$('#' + oFieldGroupView.sId).removeClass("sapScrapComp");
 					$('#' + oFieldGroupView.sId).addClass("sapConf");
 					//$('#__component0---orderdetail--pageOrderDetail-title-inner').css("color", "Green");	
 					$('#__component0---orderdetail--pageOrderDetail-title-inner').removeClass("sapRed");
-				}
-				else {
+				} else {
 					//$('#' + olabelYeld.sId).css("color", "Red");
 					$('#' + oFieldGroupView.sId).removeClass("sapConf");
 					if (EditCom) {
-						$('#' + oFieldGroupView.sId).addClass("sapScrapComp");	
+						$('#' + oFieldGroupView.sId).addClass("sapScrapComp");
 						$('#' + oFieldGroupView.sId).removeClass("sapScrap");
-					}
-					else {
-						$('#' + oFieldGroupView.sId).addClass("sapScrap");	
+					} else {
+						$('#' + oFieldGroupView.sId).addClass("sapScrap");
 						$('#' + oFieldGroupView.sId).removeClass("sapScrapComp");
 					}
-					
+
 					//$('#__component0---orderdetail--pageOrderDetail-title-inner').css("color", "Red");
 					$('#__component0---orderdetail--pageOrderDetail-title-inner').addClass("sapRed");
-					
+
 				}
 			},
 
