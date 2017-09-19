@@ -2,6 +2,14 @@ sap.ui.define(function() {
 	"use strict";
 
 	var Formatter = {
+		xfeld: function(value){
+			if (value === "X") {
+				return true;
+			}
+			else {
+				return false;
+			}
+		},
 		type_input: function(char_type){
 			if (char_type === "DATE") {
 				return "Date";

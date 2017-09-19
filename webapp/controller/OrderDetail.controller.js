@@ -105,6 +105,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oData.ScanMode = false;
 				oData.compEdit = false;
 				oData.rebutComp = false;
+				oData.editYeld = true;
 				oData.title = 'Confirmare productie comanda';
 
 				oDataDetail.Order = oData.ROOT.ORDERS[id];
@@ -122,6 +123,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					}
 					if (typeof(oData.Order.COMPONENTS[i].BATCH) === "undefined") {
 						oData.Order.COMPONENTS[i].BATCH = '';
+					}
+					if (oData.Order.COMPONENTS[i].BATCH != ''){
+						oData.editYeld = false;	
 					}
 				}
 
@@ -149,6 +153,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 							oDataDetail.SetModForm = true;
 						} else {
 							oDataDetail.SetModForm = false;
+						}
+						if (oDataLines.ROOT.LINES[i].REBUT == 'X') {
+							oDataDetail.EnableRebut = true;
+						} else {
+							oDataDetail.EnableRebut = false;
 						}
 						oDataDetail.super_user = oDataLines.ROOT.LINES[i].SUPER_USER;
 					}
@@ -359,7 +368,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						userID = sap.ushell.Container.getService("UserInfo").getId();
 					}
 					if (userID != oDataDetail.super_user) {
-
 						return MessageBox.error("Sunt componente care nu au lotul specificat!");
 					}
 				}
@@ -736,9 +744,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					oDataDetail.Order.HEADER.YELD = 0; //elimin cantitatea planificata	
 					this.doChangeYeld(0);
 					oData.compEdit = true;
-
+					oData.editYeld = false;
 				} else {
 					oData.compEdit = false;
+					oData.editYeld = true;
 
 				}
 				this.doSetColor(false, oData.compEdit);
@@ -774,7 +783,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				} else {
 					oDataDetail.IsYeld = true;
 					oData.Order.HEADER.YELD = oData.Order.HEADER.TOTAL_PLORD_QTY;
-					oDataDetail.rebutComp = 'false';                         
+					oDataDetail.rebutComp = false;                         
 					oDataDetail.txtYeldOrScrap = "obtinuta";
 					oData.title = 'Confirmare productie';
 					self.doSetColor(oDataDetail.IsYeld);
@@ -918,6 +927,24 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						var oContextCharg = aContexts[0];
 						var valueCharg = oContextCharg.getProperty();
 					}
+					
+					var oView = this.getView();
+					var oData = oView.getModel().getData();
+					var comp;
+					var gasit = false;
+					for (var i in oData.Order.COMPONENTS) {
+						comp = oData.Order.COMPONENTS[i];
+						if (valueCharg.CHARG == comp.BATCH && valueCharg.MATERIAL == comp.MATERIAL) {
+							gasit = true;
+							break;
+						}
+					}
+					if (gasit == true) {
+						MessageToast.show("Lotul  " + valueCharg.CHARG + ' a fost utilizat');
+						return;
+					}
+					oData.editYeld = false; // daca am selectat un lot nu mai am voie sa modific cantitatea
+					
 					var productInput = this.getView().byId(this.inputId);
 					productInput.setValue(oSelectedItem.getTitle());
 

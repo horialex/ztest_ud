@@ -3,14 +3,16 @@
 	<Page id="pageOrderDetail" class="sapPageOrderDetail" showNavButton="true" navButtonPress="onNavBack" title="{/title}">
 	 
 		<headerContent>
-			<Button visible="{= ${orderdetail>/IsYeld} }" icon="sap-icon://tags" press="handleChangeSwitch" type="Accept" text="Produs/Rebut"/>
-			<Button visible="{= !${orderdetail>/IsYeld} }" icon="sap-icon://error" press="handleChangeSwitch" type="Reject"  text="R E B U T / Produs"/>
+			<Button enabled="{orderdetail>/EnableRebut}"
+			visible="{= ${orderdetail>/IsYeld} }" icon="sap-icon://tags" press="handleChangeSwitch" type="Accept" text="Produs/Rebut"/>
+			<Button enabled="{orderdetail>/EnableRebut}"
+			visible="{= !${orderdetail>/IsYeld} }" icon="sap-icon://error" press="handleChangeSwitch" type="Reject"  text="R E B U T / Produs"/>
 			<Button icon="sap-icon://attachment" tooltip="Documente" type="Emphasized" text="Documente" visible="{/e_doc}" press="handleShowDoc"/>
 		</headerContent>
 		<ObjectHeader title="{HEADER/SHORT_TEXT}" number="{HEADER/PLANNEDORDER_NUM}" responsive="true" fullScreenOptimized="true">
 			<attributes>
 				<ObjectAttribute title="Linia de productie" text="{HEADER/PRODUCTION_LINE}"/>
-				<ObjectAttribute title="Produs {ProductionLineCollection>/ROOT/LINES/SET_PROD_LOT}" text="{HEADER/MATERIAL}"/>
+				<ObjectAttribute title="Produs" text="{HEADER/MATERIAL}"/>
 				<ObjectAttribute title="Cantitate planificata" text="{HEADER/TOTAL_PLORD_QTY} {path:'HEADER/BASE_UOM', formatter: '.formatter.uom'}"/>
 			</attributes>
 		</ObjectHeader>
@@ -38,11 +40,11 @@
 				<Label id="labelYeld" text="Cantitate {orderdetail>/txtYeldOrScrap}"/>
 
 
-				<Input editable="{= !${/rebutComp} }" fieldGroupIds="1" class="sapInputRight" type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
+				<Input editable="{/editYeld}" fieldGroupIds="1" class="sapInputRight" type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
 				<!--
 				<StepInput value="{HEADER/YELD}" displayValuePrecision="1" min="0" width="150px" step="1" change="handleChangeYeld"/>
 				-->
-				<Button width="10%" icon="sap-icon://delete" press="onPressClearQty"/>
+				<Button enabled="{/editYeld}" width="10%" icon="sap-icon://delete" press="onPressClearQty"/>
 				<Label text="Maistru"/>
 				<ComboBox fieldGroupIds="1" id="maistru" value="{HEADER/MAISTRU}"
 					items="{ path: 'ProductionLineCollection>/ROOT/MAISTRI', sorter: { path: 'NAME' } }">

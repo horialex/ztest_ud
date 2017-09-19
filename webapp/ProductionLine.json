@@ -22,7 +22,8 @@
 			"BARCODE": "LM_11",
 			"SET_PROD_LOT": "X",
 			"SET_MOD_FORM":"X",
-			"SUPER_USER":"DHONGU"
+			"SUPER_USER":"DHONGU",
+			"REBUT":""
 		}, {
 			"WERKS": "2010",
 			"ARBPL": "LM_12",
