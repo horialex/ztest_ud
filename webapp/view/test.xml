@@ -1,0 +1,8 @@
+<mvc:View 
+		controllerName="manifest.controller.View1"
+		xmlns:html="http://www.w3.org/1999/xhtml" 
+		xmlns:mvc="sap.ui.core.mvc" 
+		xmlns="sap.m" 
+		xmlns:core="sap.ui.core">
+	<!-- <core:Fragment   fragmentName="manifest.view.HelloDailog" type="XML" /> -->
+</mvc:View>
